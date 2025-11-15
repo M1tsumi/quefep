@@ -1,87 +1,95 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen flex flex-col">
+      <header className="border-b border-black/10 dark:border-white/10">
+        <div className="max-w-5xl mx-auto px-6 py-10">
+          <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight">Quef Central</h1>
+          <p className="mt-2 text-sm text-black/70 dark:text-white/70 max-w-prose">
+            A minimalist hub for projects by M1tsumi. Explore active work like SwiftDisc and Caelum, and join the community.
+          </p>
+          <div className="mt-6 flex flex-wrap items-center gap-3">
+            <a href="https://discord.com/users/1051142172130422884" target="_blank" rel="noreferrer" aria-label="Discord profile">
+              <img
+                src="https://img.shields.io/badge/Discord-Profile-5865F2?logo=discord&logoColor=white&style=for-the-badge"
+                alt="Discord profile badge"
+                className="h-7"
+              />
+            </a>
+            <a href="https://github.com/M1tsumi" target="_blank" rel="noreferrer" aria-label="GitHub profile">
+              <img
+                src="https://img.shields.io/badge/GitHub-M1tsumi-181717?logo=github&logoColor=white&style=for-the-badge"
+                alt="GitHub profile badge"
+                className="h-7"
+              />
+            </a>
+          </div>
+        </div>
+      </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <main className="flex-1">
+        <div className="max-w-5xl mx-auto px-6 py-10 space-y-10">
+          <section>
+            <h2 className="text-xl font-medium">Projects</h2>
+            <div className="mt-4 grid gap-4 sm:grid-cols-2">
+              <article className="rounded-lg border border-black/10 dark:border-white/10 p-5 hover:bg-black/[.03] dark:hover:bg-white/[.03] transition-colors">
+                <div className="flex items-start justify-between gap-2">
+                  <h3 className="text-lg font-semibold">SwiftDisc</h3>
+                  <a
+                    href="https://github.com/M1tsum/SwiftDisc"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-sm px-3 py-1 rounded-full border border-black/10 dark:border-white/15 hover:bg-black/[.05] dark:hover:bg-white/[.06]"
+                  >
+                    View Repo
+                  </a>
+                </div>
+                <p className="mt-2 text-sm text-black/70 dark:text-white/70">
+                  Discord tooling focused on speed and developer ergonomics.
+                </p>
+              </article>
+
+              <article className="rounded-lg border border-black/10 dark:border-white/10 p-5 hover:bg-black/[.03] dark:hover:bg-white/[.03] transition-colors">
+                <div className="flex items-start justify-between gap-2">
+                  <h3 className="text-lg font-semibold">Caelum</h3>
+                  <a
+                    href="https://github.com/M1tsum/Caelum"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-sm px-3 py-1 rounded-full border border-black/10 dark:border-white/15 hover:bg-black/[.05] dark:hover:bg-white/[.06]"
+                  >
+                    View Repo
+                  </a>
+                </div>
+                <p className="mt-2 text-sm text-black/70 dark:text-white/70">
+                  A modern, modular codebase exploring scalable Discord bot patterns.
+                </p>
+              </article>
+            </div>
+          </section>
+
+          <section>
+            <div className="rounded-lg border border-black/10 dark:border-white/10 p-6 flex items-center justify-between gap-4">
+              <div>
+                <h3 className="text-base font-medium">Join the Community</h3>
+                <p className="mt-1 text-sm text-black/70 dark:text-white/70">Get updates, share ideas, and get support.</p>
+              </div>
+              <a
+                href="https://discord.gg/6nS2KqxQtj"
+                target="_blank"
+                rel="noreferrer"
+                className="text-sm px-4 py-2 rounded-full border border-black/10 dark:border-white/15 hover:bg-black/[.05] dark:hover:bg-white/[.06]"
+              >
+                Join Server
+              </a>
+            </div>
+          </section>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      <footer className="border-t border-black/10 dark:border-white/10">
+        <div className="max-w-5xl mx-auto px-6 py-6 text-xs text-black/60 dark:text-white/60">
+          © {new Date().getFullYear()} Quef Central
+        </div>
       </footer>
     </div>
   );
