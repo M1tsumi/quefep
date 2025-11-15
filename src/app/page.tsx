@@ -5,7 +5,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto px-6 py-10">
           <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight">Quef Central</h1>
           <p className="mt-2 text-sm text-black/70 dark:text-white/70 max-w-prose">
-            A minimalist hub for projects by M1tsumi. Explore active work like SwiftDisc and Caelum, and join the community.
+            A minimalist hub for projects by Quefep. Explore active work like SwiftDisc and Caelum, and join the community.
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <a href="https://discord.com/users/1051142172130422884" target="_blank" rel="noreferrer" aria-label="Discord profile">
@@ -35,7 +35,7 @@ export default function Home() {
                 <div className="flex items-start justify-between gap-2">
                   <h3 className="text-lg font-semibold">SwiftDisc</h3>
                   <a
-                    href="https://github.com/M1tsum/SwiftDisc"
+                    href="https://github.com/M1tsumi/SwiftDisc"
                     target="_blank"
                     rel="noreferrer"
                     className="text-sm px-3 py-1 rounded-full border border-black/10 dark:border-white/15 hover:bg-black/[.05] dark:hover:bg-white/[.06]"
@@ -52,7 +52,7 @@ export default function Home() {
                 <div className="flex items-start justify-between gap-2">
                   <h3 className="text-lg font-semibold">Caelum</h3>
                   <a
-                    href="https://github.com/M1tsum/Caelum"
+                    href="https://github.com/M1tsumi/Caelum"
                     target="_blank"
                     rel="noreferrer"
                     className="text-sm px-3 py-1 rounded-full border border-black/10 dark:border-white/15 hover:bg-black/[.05] dark:hover:bg-white/[.06]"
