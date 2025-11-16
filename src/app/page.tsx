@@ -1,7 +1,8 @@
- import Image from 'next/image';
-import PepeMain from '@/app/assets/pepe-main.png';
-import CommitHistory from '@/app/components/CommitHistory';
-import TotalCommitsBadge from '@/app/components/TotalCommitsBadge';
+ import Image from "next/image";
+import PepeMain from "@/app/assets/pepe-main.png";
+import CommitHistory from "@/app/components/CommitHistory";
+import TotalCommitsBadge from "@/app/components/TotalCommitsBadge";
+import InteractionToggles from "@/app/components/InteractionToggles";
 
 export default function Home() {
   return (
@@ -26,14 +27,26 @@ export default function Home() {
             </p>
             <div className="mt-6 flex flex-col items-center gap-3">
               <div className="flex flex-wrap items-center justify-center gap-3">
-                <a href="https://discord.com/users/1051142172130422884" target="_blank" rel="noreferrer" aria-label="Discord profile">
+                <a
+                  href="https://discord.com/users/1051142172130422884"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Discord profile"
+                  className="boing-button"
+                >
                   <img
                     src="https://img.shields.io/badge/Discord-Profile-5865F2?logo=discord&logoColor=white&style=for-the-badge"
                     alt="Discord profile badge"
                     className="h-7"
                   />
                 </a>
-                <a href="https://github.com/M1tsumi" target="_blank" rel="noreferrer" aria-label="GitHub profile">
+                <a
+                  href="https://github.com/M1tsumi"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="GitHub profile"
+                  className="boing-button"
+                >
                   <img
                     src="https://img.shields.io/badge/GitHub-M1tsumi-181717?logo=github&logoColor=white&style=for-the-badge"
                     alt="GitHub profile badge"
@@ -42,13 +55,14 @@ export default function Home() {
                 </a>
               </div>
               <div className="flex flex-wrap items-center justify-center gap-3">
-                <a href="/swiftdisc" aria-label="SwiftDisc Docs Badge">
+                <a href="/swiftdisc" aria-label="SwiftDisc Docs Badge" className="boing-button">
                   <img src="https://img.shields.io/badge/SwiftDisc-Docs-0ea5e9?style=for-the-badge" alt="SwiftDisc Docs" className="h-7" />
                 </a>
-                <a href="/caelum" aria-label="Caelum Docs Badge">
+                <a href="/caelum" aria-label="Caelum Docs Badge" className="boing-button">
                   <img src="https://img.shields.io/badge/Caelum-Docs-22c55e?style=for-the-badge" alt="Caelum Docs" className="h-7" />
                 </a>
               </div>
+              <InteractionToggles />
             </div>
           </div>
         </div>
@@ -59,14 +73,14 @@ export default function Home() {
           <section>
             <h2 className="text-xl font-medium text-[#78B159]">Projects</h2>
             <div className="mt-4 grid gap-4 sm:grid-cols-2">
-              <article className="rounded-lg border border-[#78B15933] dark:border-[#78B15966] p-5 bg-black/10 dark:bg-black/40 hover:bg-[#78B1591f] dark:hover:bg-[#4A7C5940] transition-colors">
+              <article className="repo-card rounded-lg border border-[#78B15933] dark:border-[#78B15966] p-5 bg-black/10 dark:bg-black/40 hover:bg-[#78B1591f] dark:hover:bg-[#4A7C5940] transition-colors">
                 <div className="flex items-start justify-between gap-2">
                   <h3 className="text-lg font-semibold">SwiftDisc</h3>
                   <a
                     href="https://github.com/M1tsumi/SwiftDisc"
                     target="_blank"
                     rel="noreferrer"
-                    className="text-sm px-3 py-1 rounded-full border border-[#78B15980] bg-[#78B159] text-black hover:bg-[#4A7C59] hover:border-[#4A7C59] transition-colors"
+                    className="boing-button text-sm px-3 py-1 rounded-full border border-[#78B15980] bg-[#78B159] text-black hover:bg-[#4A7C59] hover:border-[#4A7C59] transition-colors"
                   >
                     View Repo
                   </a>
@@ -75,29 +89,26 @@ export default function Home() {
                   A Swift native Discord API Wrapper!
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
-                  <a
-                    href="/swiftdisc"
-                    className="text-xs uppercase tracking-wide px-3 py-1 rounded-full border border-[#0ea5e980] text-[#0ea5e9] hover:bg-[#0ea5e920]"
-                  >
+                  <a href="/swiftdisc" className="boing-button text-xs uppercase tracking-wide px-3 py-1 rounded-full border border-[#0ea5e980] text-[#0ea5e9] hover:bg-[#0ea5e920]">
                     Docs
                   </a>
                   <a
                     href="/swiftdisc/getting-started"
-                    className="text-xs uppercase tracking-wide px-3 py-1 rounded-full border border-[#78B15980] text-[#78B159] hover:bg-[#78B15920]"
+                    className="boing-button text-xs uppercase tracking-wide px-3 py-1 rounded-full border border-[#78B15980] text-[#78B159] hover:bg-[#78B15920]"
                   >
                     Getting Started
                   </a>
                 </div>
               </article>
 
-              <article className="rounded-lg border border-[#78B15933] dark:border-[#78B15966] p-5 bg-black/10 dark:bg-black/40 hover:bg-[#78B1591f] dark:hover:bg-[#4A7C5940] transition-colors">
+              <article className="repo-card rounded-lg border border-[#78B15933] dark:border-[#78B15966] p-5 bg-black/10 dark:bg-black/40 hover:bg-[#78B1591f] dark:hover:bg-[#4A7C5940] transition-colors">
                 <div className="flex items-start justify-between gap-2">
                   <h3 className="text-lg font-semibold">Caelum</h3>
                   <a
                     href="https://github.com/M1tsumi/Caelum"
                     target="_blank"
                     rel="noreferrer"
-                    className="text-sm px-3 py-1 rounded-full border border-[#78B15980] bg-[#78B159] text-black hover:bg-[#4A7C59] hover:border-[#4A7C59] transition-colors"
+                    className="boing-button text-sm px-3 py-1 rounded-full border border-[#78B15980] bg-[#78B159] text-black hover:bg-[#4A7C59] hover:border-[#4A7C59] transition-colors"
                   >
                     View Repo
                   </a>
@@ -106,15 +117,12 @@ export default function Home() {
                   The first Objective-C Discord API Wrapper!
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
-                  <a
-                    href="/caelum"
-                    className="text-xs uppercase tracking-wide px-3 py-1 rounded-full border border-[#22c55e80] text-[#22c55e] hover:bg-[#22c55e20]"
-                  >
+                  <a href="/caelum" className="boing-button text-xs uppercase tracking-wide px-3 py-1 rounded-full border border-[#22c55e80] text-[#22c55e] hover:bg-[#22c55e20]">
                     Docs
                   </a>
                   <a
                     href="/caelum/getting-started"
-                    className="text-xs uppercase tracking-wide px-3 py-1 rounded-full border border-[#78B15980] text-[#78B159] hover:bg-[#78B15920]"
+                    className="boing-button text-xs uppercase tracking-wide px-3 py-1 rounded-full border border-[#78B15980] text-[#78B159] hover:bg-[#78B15920]"
                   >
                     Getting Started
                   </a>
@@ -133,7 +141,7 @@ export default function Home() {
                 href="https://discord.gg/6nS2KqxQtj"
                 target="_blank"
                 rel="noreferrer"
-                className="text-sm px-4 py-2 rounded-full border border-[#78B15980] bg-[#78B159] text-black shadow-sm hover:bg-[#4A7C59] hover:border-[#4A7C59] hover:text-white transition-colors"
+                className="boing-button text-sm px-4 py-2 rounded-full border border-[#78B15980] bg-[#78B159] text-black shadow-sm hover:bg-[#4A7C59] hover:border-[#4A7C59] hover:text-white transition-colors"
               >
                 Join Server
               </a>
@@ -147,7 +155,13 @@ export default function Home() {
       <footer className="border-t border-black/10 dark:border-white/10">
         <div className="max-w-5xl mx-auto px-6 py-6 flex items-center justify-between">
           <div className="text-xs text-black/60 dark:text-white/60">© {new Date().getFullYear()} Quef Central</div>
-          <Image src={PepeMain} alt="Pepe" className="h-10 w-auto transform transition-transform duration-300 hover:-translate-y-1 hover:-rotate-3" />
+          <div className="pepe-blink">
+            <Image
+              src={PepeMain}
+              alt="Pepe"
+              className="pepe-blink-img h-10 w-auto transform transition-transform duration-300 hover:-translate-y-1 hover:-rotate-3"
+            />
+          </div>
         </div>
       </footer>
     </div>
