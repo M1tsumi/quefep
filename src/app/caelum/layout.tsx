@@ -1,11 +1,12 @@
  import type { ReactNode } from 'react';
  import Image from 'next/image';
+ import Link from 'next/link';
  import PepeMagic from '@/app/assets/pepe-magic.png';
  export default function CaelumLayout({ children }: { children: ReactNode }) {
   return (
     <div className="min-h-screen flex">
       <aside className="hidden md:block w-72 shrink-0 border-r border-black/10 dark:border-white/10 p-6 sticky top-0 h-screen overflow-y-auto">
-        <a href="/" className="inline-flex items-center gap-2 text-sm px-3 py-2 rounded-md border border-black/10 dark:border-white/15 hover:bg-black/[.05] dark:hover:bg-white/[.06]">Home</a>
+        <Link href="/" className="inline-flex items-center gap-2 text-sm px-3 py-2 rounded-md border border-black/10 dark:border-white/15 hover:bg-black/[.05] dark:hover:bg-white/[.06]">Home</Link>
         <div className="text-xl font-semibold">Caelum Docs</div>
         <div className="mt-2 text-xs text-black/60 dark:text-white/60">Objective-C Discord library built for stability</div>
         <div className="mt-4">
@@ -30,7 +31,7 @@
       <main className="flex-1">
         <div className="border-b border-black/10 dark:border-white/10 px-4 sm:px-6 py-3 flex items-center justify-between sticky top-0 bg-white/70 dark:bg-black/40 backdrop-blur supports-[backdrop-filter]:bg-white/50 dark:supports-[backdrop-filter]:bg-black/30 z-10">
           <div className="text-sm text-black/60 dark:text-white/60">Caelum Documentation</div>
-          <a href="/" className="text-xs px-3 py-1 rounded-md border border-black/10 dark:border-white/15 hover:bg-black/[.05] dark:hover:bg-white/[.06]">Home</a>
+          <Link href="/" className="text-xs px-3 py-1 rounded-md border border-black/10 dark:border-white/15 hover:bg-black/[.05] dark:hover:bg-white/[.06]">Home</Link>
         </div>
         <div className="max-w-3xl mx-auto px-6 py-8">
           <div className="prose dark:prose-invert max-w-none">
