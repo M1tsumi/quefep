@@ -18,7 +18,7 @@ interface CodeBlockProps {
   language?: CodeLanguage;
 }
 
-export default function CodeBlock({ code, language = 'text' }: CodeBlockProps) {
+export default function CodeBlock({ code }: CodeBlockProps) {
   const highlighted = highlightCode(code);
 
   return (
