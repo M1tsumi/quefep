@@ -1,12 +1,6 @@
 import type { Metadata } from "next";
-import { Comic_Neue, Geist_Mono } from "next/font/google";
+import { Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-const comic = Comic_Neue({
-  variable: "--font-comic-sans",
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -31,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${comic.variable} ${geistMono.variable} antialiased pepe-bg`}
+        className={`${geistMono.variable} antialiased`}
       >
         <link rel="icon" href="/pepe.ico" />
         {children}
