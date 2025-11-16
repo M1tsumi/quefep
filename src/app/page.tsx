@@ -57,16 +57,16 @@ export default function Home() {
       <main className="flex-1">
         <div className="max-w-5xl mx-auto px-6 py-10 space-y-10">
           <section>
-            <div className="grid gap-6 lg:grid-cols-3">
-              <div className="lg:col-span-2 space-y-4">
+            <div className="grid gap-6 lg:grid-cols-3 items-stretch">
+              <div className="lg:col-span-2 space-y-4 flex flex-col h-full">
                 <div className="flex items-center justify-between">
                   <h2 className="text-xl font-medium text-[#78B159]">Projects</h2>
                   <span className="text-xs uppercase tracking-wide text-black/50 dark:text-white/50">Docs • Repo • Get Started</span>
                 </div>
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <article className="rounded-lg border border-[#78B15933] dark:border-[#78B15966] p-5 bg-black/10 dark:bg-black/40 hover:bg-[#78B1591f] dark:hover:bg-[#4A7C5940] transition-colors">
+                <div className="grid gap-4 sm:grid-cols-2 auto-rows-fr">
+                  <article className="rounded-lg border border-[#78B15933] dark:border-[#78B15966] p-5 bg-black/10 dark:bg-black/40 hover:bg-[#78B1591f] dark:hover:bg-[#4A7C5940] transition-colors flex flex-col h-full">
                     <h3 className="text-lg font-semibold">SwiftDisc</h3>
-                    <p className="mt-2 text-sm text-black/70 dark:text-white/70">A Swift native Discord API wrapper.</p>
+                    <p className="mt-2 text-sm text-black/70 dark:text-white/70 flex-1">A Swift native Discord API wrapper.</p>
                     <div className="mt-5 flex flex-wrap gap-2">
                       <a
                         href="/swiftdisc"
@@ -91,9 +91,9 @@ export default function Home() {
                     </div>
                   </article>
 
-                  <article className="rounded-lg border border-[#78B15933] dark:border-[#78B15966] p-5 bg-black/10 dark:bg-black/40 hover:bg-[#78B1591f] dark:hover:bg-[#4A7C5940] transition-colors">
+                  <article className="rounded-lg border border-[#78B15933] dark:border-[#78B15966] p-5 bg-black/10 dark:bg-black/40 hover:bg-[#78B1591f] dark:hover.bg-[#4A7C5940] transition-colors flex flex-col h-full">
                     <h3 className="text-lg font-semibold">Caelum</h3>
-                    <p className="mt-2 text-sm text-black/70 dark:text-white/70">Objective-C first Discord automation toolkit.</p>
+                    <p className="mt-2 text-sm text-black/70 dark:text-white/70 flex-1">Objective-C first Discord automation toolkit.</p>
                     <div className="mt-5 flex flex-wrap gap-2">
                       <a
                         href="/caelum"
@@ -120,7 +120,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="rounded-lg border border-[#78B15933] dark:border-[#78B15966] bg-black/5 dark:bg-black/30 p-5 flex flex-col">
+              <div className="rounded-lg border border-[#78B15933] dark:border-[#78B15966] bg-black/5 dark:bg-black/30 p-5 flex flex-col h-full">
                 <h3 className="text-base font-medium text-center">Quef Central Discord</h3>
                 <p className="mt-1 text-sm text-black/70 dark:text-white/70 text-center">Sliding into the frog pond? Tap the invite below.</p>
                 <div className="mt-4 flex-1 flex items-center justify-center">
