@@ -99,3 +99,11 @@ article.prose code {
 .code-comment {
   color: #9ca3af;
 }
+
+.code-function {
+  color: #facc15;
+}
+
+.code-variable {
+  color: #e5e7eb;
+}

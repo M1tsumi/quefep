@@ -19,6 +19,10 @@ function highlightSwift(raw: string): string {
   code = code.replace(/\b([A-Z][A-Za-z0-9_]*)\b/g, '<span class="code-type">$1<\/span>');
   // Numbers
   code = code.replace(/\b(\d+(?:\.\d+)?)\b/g, '<span class="code-number">$1<\/span>');
+  // Function names (identifier followed by parenthesis)
+  code = code.replace(/\b([a-zA-Z_][A-Za-z0-9_]*)\s*(?=\()/g, '<span class="code-function">$1<\/span>');
+  // Variables / lowercased identifiers that are not already wrapped
+  code = code.replace(/\b([a-z_][A-Za-z0-9_]*)\b/g, '<span class="code-variable">$1<\/span>');
   return code;
 }
 
@@ -34,6 +38,10 @@ function highlightObjC(raw: string): string {
   code = code.replace(/\b(BOOL|NSInteger|NSUInteger|NSString|NSArray|NSDictionary|NSError|id|void)\b/g, '<span class="code-type">$1<\/span>');
   // Numbers
   code = code.replace(/\b(\d+(?:\.\d+)?)\b/g, '<span class="code-number">$1<\/span>');
+  // Method / function-like identifiers before '(' or ':' patterns
+  code = code.replace(/\b([A-Za-z_][A-Za-z0-9_]*)\s*(?=\()/g, '<span class="code-function">$1<\/span>');
+  // Variables / lowercased identifiers
+  code = code.replace(/\b([a-z_][A-Za-z0-9_]*)\b/g, '<span class="code-variable">$1<\/span>');
   return code;
 }
 

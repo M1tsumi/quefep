@@ -53,7 +53,7 @@
                   </a>
                 </div>
                 <p className="mt-2 text-sm text-black/70 dark:text-white/70">
-                  Discord tooling focused on speed and developer ergonomics.
+                  A Swift native Discord API Wrapper!
                 </p>
                 <div className="mt-3">
                   <a href="/swiftdisc" aria-label="SwiftDisc Docs Badge">
@@ -75,7 +75,7 @@
                   </a>
                 </div>
                 <p className="mt-2 text-sm text-black/70 dark:text-white/70">
-                  A modern, modular codebase exploring scalable Discord bot patterns.
+                  The first Objective-C Discord API Wrapper!
                 </p>
                 <div className="mt-3">
                   <a href="/caelum" aria-label="Caelum Docs Badge">
