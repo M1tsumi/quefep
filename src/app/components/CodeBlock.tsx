@@ -1,4 +1,15 @@
+import hljs from 'highlight.js/lib/core';
+import swift from 'highlight.js/lib/languages/swift';
+import objectivec from 'highlight.js/lib/languages/objectivec';
+import bash from 'highlight.js/lib/languages/bash';
+import json from 'highlight.js/lib/languages/json';
+
 export type CodeLanguage = 'swift' | 'objective-c' | 'bash' | 'json' | 'text';
+
+hljs.registerLanguage('swift', swift);
+hljs.registerLanguage('objectivec', objectivec);
+hljs.registerLanguage('bash', bash);
+hljs.registerLanguage('json', json);
 
 function escapeHtml(code: string): string {
   return code
@@ -7,46 +18,26 @@ function escapeHtml(code: string): string {
     .replace(/>/g, '&gt;');
 }
 
-function highlightSwift(raw: string): string {
-  let code = raw;
-  // Keywords
-  code = code.replace(/\b(let|var|func|class|struct|enum|protocol|import|extension|if|else|switch|case|for|in|while|return|async|await|try|catch|throw)\b/g, '<span class="code-keyword">$1<\/span>');
-  // Types / capitalized identifiers
-  code = code.replace(/\b([A-Z][A-Za-z0-9_]*)\b/g, '<span class="code-type">$1<\/span>');
-  // Numbers
-  code = code.replace(/\b(\d+(?:\.\d+)?)\b/g, '<span class="code-number">$1<\/span>');
-  // Strings
-  code = code.replace(/("(?:[^"\\]|\\.)*")/g, '<span class="code-string">$1<\/span>');
-  // Comments
-  code = code.replace(/(\/(?:\/).*?$)/gm, '<span class="code-comment">$1<\/span>');
-  return code;
-}
-
-function highlightObjC(raw: string): string {
-  let code = raw;
-  // Directives and keywords
-  code = code.replace(/(@interface|@implementation|@end|@autoreleasepool|@protocol|@import|#import|#include)\b/g, '<span class="code-keyword">$1<\/span>');
-  // Common types
-  code = code.replace(/\b(BOOL|NSInteger|NSUInteger|NSString|NSArray|NSDictionary|NSError|id|void)\b/g, '<span class="code-type">$1<\/span>');
-  // Numbers
-  code = code.replace(/\b(\d+(?:\.\d+)?)\b/g, '<span class="code-number">$1<\/span>');
-  // Strings
-  code = code.replace(/(@?"(?:[^"\\]|\\.)*")/g, '<span class="code-string">$1<\/span>');
-  // Comments
-  code = code.replace(/(\/(?:\/).*?$)/gm, '<span class="code-comment">$1<\/span>');
-  return code;
-}
+const LANGUAGE_MAP: Record<CodeLanguage, string | null> = {
+  swift: 'swift',
+  'objective-c': 'objectivec',
+  bash: 'bash',
+  json: 'json',
+  text: null,
+};
 
 export function highlightCode(code: string, language: CodeLanguage = 'text'): string {
-  const escaped = escapeHtml(code);
+  const lang = LANGUAGE_MAP[language];
 
-  switch (language) {
-    case 'swift':
-      return highlightSwift(escaped);
-    case 'objective-c':
-      return highlightObjC(escaped);
-    default:
-      return escaped;
+  if (!lang) {
+    return escapeHtml(code);
+  }
+
+  try {
+    const result = hljs.highlight(code, { language: lang });
+    return result.value;
+  } catch {
+    return escapeHtml(code);
   }
 }
 
@@ -60,7 +51,7 @@ export default function CodeBlock({ code, language = 'text' }: CodeBlockProps) {
 
   return (
     <pre className="code-block">
-      <code dangerouslySetInnerHTML={{ __html: highlighted }} />
+      <code className="hljs" dangerouslySetInnerHTML={{ __html: highlighted }} />
     </pre>
   );
 }

@@ -80,30 +80,32 @@ article.prose code {
   font-size: 0.85rem;
 }
 
-.code-keyword {
+/* highlight.js theme (VS Code-ish) */
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-title,
+.hljs-section {
   color: #7dd3fc;
 }
 
-.code-type {
+.hljs-type,
+.hljs-class .hljs-title {
   color: #a5b4fc;
 }
 
-.code-string {
+.hljs-string,
+.hljs-meta .hljs-string,
+.hljs-number {
   color: #86efac;
 }
 
-.code-number {
-  color: #fca5a5;
-}
-
-.code-comment {
+.hljs-comment {
   color: #9ca3af;
 }
 
-.code-function {
-  color: #facc15;
-}
-
-.code-variable {
+.hljs-built_in,
+.hljs-variable,
+.hljs-params {
   color: #e5e7eb;
 }
