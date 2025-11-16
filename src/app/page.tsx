@@ -122,20 +122,22 @@ export default function Home() {
 
               <div className="rounded-lg border border-[#78B15933] dark:border-[#78B15966] bg-black/5 dark:bg-black/30 p-5 flex flex-col">
                 <h3 className="text-base font-medium text-center">Quef Central Discord</h3>
-                <p className="mt-1 text-sm text-black/70 dark:text-white/70 text-center">Live updates & support direct from the community.</p>
+                <p className="mt-1 text-sm text-black/70 dark:text-white/70 text-center">Sliding into the frog pond? Tap the invite below.</p>
                 <div className="mt-4 flex-1 flex items-center justify-center">
-                  <div className="w-full">
-                    <iframe
-                      title="Quef Central Discord Widget"
-                      src="https://discord.com/widget?id=1439300942167146508&theme=dark"
-                      width="100%"
-                      height="320"
-                      allowTransparency
-                      frameBorder="0"
-                      sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-                      className="rounded-xl border border-black/10 dark:border-white/10 shadow-lg"
+                  <a
+                    href="https://discord.gg/6nS2KqxQtj"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-full max-w-sm block"
+                    aria-label="Join the Quef Central Discord server"
+                  >
+                    <img
+                      src="https://invidget.switchblade.xyz/6nS2KqxQtj"
+                      alt="Discord invite for Quef Central"
+                      className="w-full rounded-2xl border border-black/10 dark:border-white/10 shadow-lg dark:shadow-black/40"
+                      loading="lazy"
                     />
-                  </div>
+                  </a>
                 </div>
               </div>
             </div>
