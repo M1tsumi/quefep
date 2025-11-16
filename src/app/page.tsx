@@ -65,14 +65,14 @@
                 </div>
               </article>
 
-              <article className="rounded-lg border border-black/10 dark:border-white/10 p-5 hover:bg-black/[.03] dark:hover:bg-white/[.03] transition-colors">
+              <article className="rounded-lg border border-[#78B15933] dark:border-[#78B15966] p-5 bg-black/10 dark:bg-black/40 hover:bg-[#78B1591f] dark:hover:bg-[#4A7C5940] transition-colors">
                 <div className="flex items-start justify-between gap-2">
                   <h3 className="text-lg font-semibold">Caelum</h3>
                   <a
                     href="https://github.com/M1tsumi/Caelum"
                     target="_blank"
                     rel="noreferrer"
-                    className="text-sm px-3 py-1 rounded-full border border-black/10 dark:border-white/15 hover:bg-black/[.05] dark:hover:bg-white/[.06]"
+                    className="text-sm px-3 py-1 rounded-full border border-[#78B15980] bg-[#78B159] text-black hover:bg-[#4A7C59] hover:border-[#4A7C59] transition-colors"
                   >
                     View Repo
                   </a>
