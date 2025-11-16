@@ -90,7 +90,7 @@
           </section>
 
           <section>
-            <div className="rounded-lg border border-[#78B15933] dark:border-[#78B15966] p-6 flex items-center justify-between gap-4 bg-black/10 dark:bg-black/40">
+            <div className="rounded-lg border border-[#78B15933] dark:border-[#78B15966] p-5 bg-black/10 dark:bg-black/40 hover:bg-[#78B1591f] dark:hover:bg-[#4A7C5940] transition-colors flex items-center justify-between gap-4">
               <div>
                 <h3 className="text-base font-medium">Join the Community</h3>
                 <p className="mt-1 text-sm text-black/70 dark:text-white/70">Get updates, share ideas, and get support.</p>
