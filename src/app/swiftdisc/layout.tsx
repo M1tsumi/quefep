@@ -1,13 +1,13 @@
  import type { ReactNode } from 'react';
- import Image from 'next/image';
- import Link from 'next/link';
- import PepeEvil from '@/app/assets/pepe-evil.png';
- import Toc from '@/app/components/Toc';
- export default function SwiftDiscLayout({ children }: { children: ReactNode }) {
+import Image from 'next/image';
+import Link from 'next/link';
+import PepeEvil from '@/app/assets/pepe-evil.png';
+import Toc from '@/app/components/Toc';
+
+export default function SwiftDiscLayout({ children }: { children: ReactNode }) {
   return (
     <div className="min-h-screen flex">
       <aside className="hidden md:block w-72 shrink-0 border-r border-black/10 dark:border-white/10 p-6 sticky top-0 h-screen overflow-y-auto">
-        <Link href="/" className="inline-flex items-center gap-2 text-sm px-3 py-2 rounded-md border border-black/10 dark:border-white/15 hover:bg-black/[.05] dark:hover:bg-white/[.06]">Home</Link>
         <div className="text-xl font-semibold">SwiftDisc Docs</div>
         <div className="mt-2 text-xs text-black/60 dark:text-white/60">Fast, ergonomic Swift Discord library</div>
         <div className="mt-4">
