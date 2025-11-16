@@ -42,6 +42,23 @@ function formatDate(dateString?: string): string {
   });
 }
 
+function splitCommitMessage(message?: string): { title: string; summary: string } {
+  if (!message) {
+    return { title: "Update", summary: "" };
+  }
+
+  const lines = message
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean);
+
+  const [title, ...rest] = lines;
+  return {
+    title: title || "Update",
+    summary: rest.join(" ").trim(),
+  };
+}
+
 function RepoCommits({
   name,
   repo,
@@ -70,21 +87,31 @@ function RepoCommits({
         </p>
       ) : (
         <ul className="mt-3 space-y-2 text-xs text-black/70 dark:text-white/70">
-          {commits.map((commit) => (
-            <li key={commit.sha} className="flex flex-col gap-0.5">
-              <Link
-                href={commit.html_url}
-                target="_blank"
-                rel="noreferrer"
-                className="truncate hover:underline"
-              >
-                {commit.commit.message.split("\n")[0]}
-              </Link>
-              <span className="text-[10px] text-black/50 dark:text-white/50">
-                {formatDate(commit.commit.author?.date)}
-              </span>
-            </li>
-          ))}
+          {commits.map((commit) => {
+            const { title, summary } = splitCommitMessage(commit.commit.message);
+            const author = commit.commit.author?.name ?? "Unknown author";
+
+            return (
+              <li key={commit.sha} className="flex flex-col gap-1 rounded-md bg-black/5 dark:bg-white/5 p-2">
+                <Link
+                  href={commit.html_url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-medium text-black dark:text-white hover:text-[#4A7C59] dark:hover:text-[#78B159]"
+                >
+                  {title}
+                </Link>
+                {summary && (
+                  <p className="text-[11px] text-black/60 dark:text-white/60">
+                    {summary}
+                  </p>
+                )}
+                <span className="text-[10px] text-black/50 dark:text-white/50">
+                  {author} • {formatDate(commit.commit.author?.date)}
+                </span>
+              </li>
+            );
+          })}
         </ul>
       )}
     </article>
