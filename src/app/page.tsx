@@ -57,90 +57,85 @@ export default function Home() {
       <main className="flex-1">
         <div className="max-w-5xl mx-auto px-6 py-10 space-y-10">
           <section>
-            <h2 className="text-xl font-medium text-[#78B159]">Projects</h2>
-            <div className="mt-4 grid gap-4 sm:grid-cols-2">
-              <article className="rounded-lg border border-[#78B15933] dark:border-[#78B15966] p-5 bg-black/10 dark:bg-black/40 hover:bg-[#78B1591f] dark:hover:bg-[#4A7C5940] transition-colors">
-                <div className="flex items-start justify-between gap-2">
-                  <h3 className="text-lg font-semibold">SwiftDisc</h3>
-                  <a
-                    href="https://github.com/M1tsumi/SwiftDisc"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-sm px-3 py-1 rounded-full border border-[#78B15980] bg-[#78B159] text-black hover:bg-[#4A7C59] hover:border-[#4A7C59] transition-colors"
-                  >
-                    View Repo
-                  </a>
+            <div className="grid gap-6 lg:grid-cols-3">
+              <div className="lg:col-span-2 space-y-4">
+                <div className="flex items-center justify-between">
+                  <h2 className="text-xl font-medium text-[#78B159]">Projects</h2>
+                  <span className="text-xs uppercase tracking-wide text-black/50 dark:text-white/50">Docs • Repo • Get Started</span>
                 </div>
-                <p className="mt-2 text-sm text-black/70 dark:text-white/70">
-                  A Swift native Discord API Wrapper!
-                </p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  <a
-                    href="/swiftdisc"
-                    className="text-xs uppercase tracking-wide px-3 py-1 rounded-full border border-[#0ea5e980] text-[#0ea5e9] hover:bg-[#0ea5e920]"
-                  >
-                    Docs
-                  </a>
-                  <a
-                    href="/swiftdisc/getting-started"
-                    className="text-xs uppercase tracking-wide px-3 py-1 rounded-full border border-[#78B15980] text-[#78B159] hover:bg-[#78B15920]"
-                  >
-                    Getting Started
-                  </a>
-                </div>
-              </article>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <article className="rounded-lg border border-[#78B15933] dark:border-[#78B15966] p-5 bg-black/10 dark:bg-black/40 hover:bg-[#78B1591f] dark:hover:bg-[#4A7C5940] transition-colors">
+                    <h3 className="text-lg font-semibold">SwiftDisc</h3>
+                    <p className="mt-2 text-sm text-black/70 dark:text-white/70">A Swift native Discord API wrapper.</p>
+                    <div className="mt-5 flex flex-wrap gap-2">
+                      <a
+                        href="/swiftdisc"
+                        className="text-xs uppercase tracking-wide px-3 py-1 rounded-full border border-[#0ea5e980] text-[#0ea5e9] hover:bg-[#0ea5e920]"
+                      >
+                        Docs
+                      </a>
+                      <a
+                        href="https://github.com/M1tsumi/SwiftDisc"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-xs uppercase tracking-wide px-3 py-1 rounded-full border border-[#78B15980] text-black bg-[#78B159] hover:bg-[#4A7C59] hover:text-white"
+                      >
+                        Repo
+                      </a>
+                      <a
+                        href="/swiftdisc/getting-started"
+                        className="text-xs uppercase tracking-wide px-3 py-1 rounded-full border border-[#78B15980] text-[#78B159] hover:bg-[#78B15920]"
+                      >
+                        Getting Started
+                      </a>
+                    </div>
+                  </article>
 
-              <article className="rounded-lg border border-[#78B15933] dark:border-[#78B15966] p-5 bg-black/10 dark:bg-black/40 hover:bg-[#78B1591f] dark:hover:bg-[#4A7C5940] transition-colors">
-                <div className="flex items-start justify-between gap-2">
-                  <h3 className="text-lg font-semibold">Caelum</h3>
-                  <a
-                    href="https://github.com/M1tsumi/Caelum"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-sm px-3 py-1 rounded-full border border-[#78B15980] bg-[#78B159] text-black hover:bg-[#4A7C59] hover:border-[#4A7C59] transition-colors"
-                  >
-                    View Repo
-                  </a>
+                  <article className="rounded-lg border border-[#78B15933] dark:border-[#78B15966] p-5 bg-black/10 dark:bg-black/40 hover:bg-[#78B1591f] dark:hover:bg-[#4A7C5940] transition-colors">
+                    <h3 className="text-lg font-semibold">Caelum</h3>
+                    <p className="mt-2 text-sm text-black/70 dark:text-white/70">Objective-C first Discord automation toolkit.</p>
+                    <div className="mt-5 flex flex-wrap gap-2">
+                      <a
+                        href="/caelum"
+                        className="text-xs uppercase tracking-wide px-3 py-1 rounded-full border border-[#22c55e80] text-[#22c55e] hover:bg-[#22c55e20]"
+                      >
+                        Docs
+                      </a>
+                      <a
+                        href="https://github.com/M1tsumi/Caelum"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-xs uppercase tracking-wide px-3 py-1 rounded-full border border-[#78B15980] text-black bg-[#78B159] hover:bg-[#4A7C59] hover:text-white"
+                      >
+                        Repo
+                      </a>
+                      <a
+                        href="/caelum/getting-started"
+                        className="text-xs uppercase tracking-wide px-3 py-1 rounded-full border border-[#78B15980] text-[#78B159] hover:bg-[#78B15920]"
+                      >
+                        Getting Started
+                      </a>
+                    </div>
+                  </article>
                 </div>
-                <p className="mt-2 text-sm text-black/70 dark:text-white/70">
-                  The first Objective-C Discord API Wrapper!
-                </p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  <a
-                    href="/caelum"
-                    className="text-xs uppercase tracking-wide px-3 py-1 rounded-full border border-[#22c55e80] text-[#22c55e] hover:bg-[#22c55e20]"
-                  >
-                    Docs
-                  </a>
-                  <a
-                    href="/caelum/getting-started"
-                    className="text-xs uppercase tracking-wide px-3 py-1 rounded-full border border-[#78B15980] text-[#78B159] hover:bg-[#78B15920]"
-                  >
-                    Getting Started
-                  </a>
-                </div>
-              </article>
-            </div>
-          </section>
+              </div>
 
-          <section>
-            <div className="rounded-lg border border-[#78B15933] dark:border-[#78B15966] bg-black/5 dark:bg-black/30 p-5">
-              <h3 className="text-base font-medium text-center">Quef Central Discord</h3>
-              <p className="mt-1 text-sm text-black/70 dark:text-white/70 text-center">
-                Live updates, support, and chill meme energy—straight from the source.
-              </p>
-              <div className="mt-5 flex justify-center">
-                <div className="w-full max-w-md">
-                  <iframe
-                    title="Quef Central Discord Widget"
-                    src="https://discord.com/widget?id=1439300942167146508&theme=dark"
-                    width="100%"
-                    height="500"
-                    allowTransparency
-                    frameBorder="0"
-                    sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-                    className="rounded-xl border border-black/10 dark:border-white/10 shadow-lg"
-                  />
+              <div className="rounded-lg border border-[#78B15933] dark:border-[#78B15966] bg-black/5 dark:bg-black/30 p-5 flex flex-col">
+                <h3 className="text-base font-medium text-center">Quef Central Discord</h3>
+                <p className="mt-1 text-sm text-black/70 dark:text-white/70 text-center">Live updates & support direct from the community.</p>
+                <div className="mt-4 flex-1 flex items-center justify-center">
+                  <div className="w-full">
+                    <iframe
+                      title="Quef Central Discord Widget"
+                      src="https://discord.com/widget?id=1439300942167146508&theme=dark"
+                      width="100%"
+                      height="320"
+                      allowTransparency
+                      frameBorder="0"
+                      sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+                      className="rounded-xl border border-black/10 dark:border-white/10 shadow-lg"
+                    />
+                  </div>
                 </div>
               </div>
             </div>

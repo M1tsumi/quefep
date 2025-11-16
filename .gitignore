@@ -201,3 +201,4 @@ dist
 ### OpenNext ###
 .open-next/
 # next-env.d.ts should be committed for TypeScript projects using Next.js
+
