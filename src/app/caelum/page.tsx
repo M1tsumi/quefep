@@ -3,7 +3,7 @@ export default function Page() {
     <article className="prose dark:prose-invert max-w-none">
       <h1>Caelum</h1>
       <p>Caelum is a Discord API wrapper for Objective-C focused on stability and compatibility.</p>
-      <h2>What you'll find</h2>
+      <h2>What you&apos;ll find</h2>
       <ul>
         <li>Conceptual guides for iOS/macOS integrations</li>
         <li>Examples for common bot and client patterns</li>

@@ -1,12 +1,14 @@
-export default function Home() {
+ import Image from 'next/image';
+ import PepeMain from '@/app/assets/pepe-main.png';
+ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
       <header className="border-b border-black/10 dark:border-white/10">
         <div className="max-w-5xl mx-auto px-6 py-10">
           <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight">Quef Central</h1>
           <p className="mt-2 text-sm text-black/70 dark:text-white/70 max-w-prose">
-           A project by Quefep, for projects by Quefep. If you'd like to support this developer, just join the community discord!
-           We're working on projects such as SwiftDisc, Caelum, and more!
+           A project by Quefep, for projects by Quefep. If you&apos;d like to support this developer, just join the community discord!
+           We&apos;re working on projects such as SwiftDisc, Caelum, and more!
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <a href="https://discord.com/users/1051142172130422884" target="_blank" rel="noreferrer" aria-label="Discord profile">
@@ -110,8 +112,9 @@ export default function Home() {
       </main>
 
       <footer className="border-t border-black/10 dark:border-white/10">
-        <div className="max-w-5xl mx-auto px-6 py-6 text-xs text-black/60 dark:text-white/60">
-          © {new Date().getFullYear()} Quef Central
+        <div className="max-w-5xl mx-auto px-6 py-6 flex items-center justify-between">
+          <div className="text-xs text-black/60 dark:text-white/60">© {new Date().getFullYear()} Quef Central</div>
+          <Image src={PepeMain} alt="Pepe" className="h-10 w-auto" />
         </div>
       </footer>
     </div>
