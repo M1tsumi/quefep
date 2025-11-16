@@ -1,17 +1,24 @@
+import CodeBlock from "@/app/components/CodeBlock";
+
 export default function Page() {
   return (
     <article className="prose dark:prose-invert max-w-none">
       <h1>Getting Started</h1>
       <h2>Installation</h2>
       <h3>CocoaPods</h3>
-      <pre><code>{`pod 'Caelum', '~> 0.1'`}</code></pre>
+      <CodeBlock language="bash" code={`pod 'Caelum', '~> 0.1'`} />
       <h3>Swift Package Manager</h3>
-      <pre><code>{`dependencies: [
+      <CodeBlock
+        language="swift"
+        code={`dependencies: [
   .package(url: "https://github.com/M1tsumi/Caelum", from: "0.1.0")
-]`}</code></pre>
+]`}
+      />
 
       <h2>Quickstart (Objective-C)</h2>
-      <pre><code>{`@import Caelum;
+      <CodeBlock
+        language="objective-c"
+        code={`@import Caelum;
 
 int main(int argc, char * argv[]) {
   @autoreleasepool {
@@ -29,7 +36,8 @@ int main(int argc, char * argv[]) {
 
     [[NSRunLoop currentRunLoop] run];
   }
-}`}</code></pre>
+}`}
+      />
 
       <h2>Next steps</h2>
       <ul>

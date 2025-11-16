@@ -1,3 +1,5 @@
+import CodeBlock from "@/app/components/CodeBlock";
+
 export default function Page() {
   return (
     <article className="prose dark:prose-invert max-w-none">
@@ -29,8 +31,9 @@ export default function Page() {
 
       <h2>Minimal example</h2>
       <p>Here is a tiny example showing how a Caelum client might be bootstrapped:</p>
-      <pre>
-        <code>{`#import <Caelum/Caelum.h>
+      <CodeBlock
+        language="objective-c"
+        code={`#import <Caelum/Caelum.h>
 
 CLClientConfiguration *config = [[CLClientConfiguration alloc] initWithToken:@"Bot YOUR_TOKEN_HERE"];
 config.intents = CLIntentsGuilds | CLIntentsGuildMessages;
@@ -41,8 +44,8 @@ CLClient *client = [[CLClient alloc] initWithConfiguration:config];
     NSLog(@"Connected as %@#%@", event.user.username, event.user.discriminator);
 }];
 
-[client connectWithCompletion:nil];`}</code>
-      </pre>
+[client connectWithCompletion:nil];`}
+      />
 
       <h2>Where to go next</h2>
       <ul>

@@ -1,20 +1,27 @@
+import CodeBlock from "@/app/components/CodeBlock";
+
 export default function Page() {
   return (
     <article className="prose dark:prose-invert max-w-none">
       <h1>Getting Started</h1>
       <h2>Installation (Swift Package Manager)</h2>
       <p>Add SwiftDisc to your Package.swift:</p>
-      <pre><code>{`dependencies: [
+      <CodeBlock
+        language="swift"
+        code={`dependencies: [
     .package(url: "https://github.com/M1tsumi/SwiftDisc.git", from: "0.8.0")
 ]
 
 targets: [
     .target(name: "YourBot", dependencies: ["SwiftDisc"])
-]`}</code></pre>
+]`}
+      />
 
       <h2>Quick Start</h2>
       <p>Get a bot running in minutes:</p>
-      <pre><code>{`import SwiftDisc
+      <CodeBlock
+        language="swift"
+        code={`import SwiftDisc
 
 @main
 struct MyFirstBot {
@@ -42,7 +49,8 @@ struct MyFirstBot {
             print("❌ Error: \(error)")
         }
     }
-}`}</code></pre>
+}`}
+      />
 
       <h2>Next steps</h2>
       <ul>

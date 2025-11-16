@@ -70,3 +70,32 @@ article.prose pre {
 article.prose code {
   font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);
 }
+
+.code-block {
+  background: rgba(15, 23, 42, 0.95);
+  color: #e5e7eb;
+  padding: 0.9rem 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  font-size: 0.85rem;
+}
+
+.code-keyword {
+  color: #7dd3fc;
+}
+
+.code-type {
+  color: #a5b4fc;
+}
+
+.code-string {
+  color: #86efac;
+}
+
+.code-number {
+  color: #fca5a5;
+}
+
+.code-comment {
+  color: #9ca3af;
+}
