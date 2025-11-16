@@ -2,16 +2,99 @@ export default function Page() {
   return (
     <article className="prose dark:prose-invert max-w-none">
       <h1>Client</h1>
-      <p>Primary client coordinating REST and Gateway for Objective-C apps.</p>
-      <h2>Key classes</h2>
+      <p>
+        The <code>CLClient</code> is the main entrypoint into Caelum. It wires together the REST
+        and Gateway layers, manages connection lifecycle, and dispatches strongly-typed events to
+        your Objective-C code.
+      </p>
+
+      <h2>Core types</h2>
       <ul>
-        <li><code>CLClient</code></li>
-        <li><code>CLClientConfiguration</code></li>
-        <li><code>CLIntents</code></li>
+        <li><code>CLClient</code> &mdash; primary Discord client.</li>
+        <li><code>CLClientConfiguration</code> &mdash; token, intents, presence, shard config.</li>
+        <li><code>CLIntents</code> &mdash; bitmask describing which events you want.</li>
       </ul>
-      <h2>Usage</h2>
-      <pre><code>{`CLClient *client = [[CLClient alloc] initWithToken:@"TOKEN"];
-[client connectWithCompletion:nil];`}</code></pre>
+
+      <h2>Basic setup</h2>
+      <p>
+        Construct a configuration, then create a <code>CLClient</code> and connect. You typically do
+        this during app launch, e.g. from your app delegate.
+      </p>
+      <pre>
+        <code>{`#import <Caelum/Caelum.h>
+
+CLClientConfiguration *config = [[CLClientConfiguration alloc] initWithToken:@"Bot YOUR_TOKEN_HERE"];
+config.intents = CLIntentsGuilds | CLIntentsGuildMessages | CLIntentsMessageContent;
+
+CLClient *client = [[CLClient alloc] initWithConfiguration:config];
+
+// Optionally configure presence
+client.presence = [CLPresence presenceWithStatus:CLPresenceStatusOnline
+                                         activity:[CLActivity activityWithName:@"Building bots" type:CLActivityTypePlaying]];
+
+[client connectWithCompletion:^(NSError * _Nullable error) {
+    if (error != nil) {
+        NSLog(@"Failed to connect: %@", error);
+        return;
+    }
+
+    NSLog(@"Caelum client connected.");
+}];`}</code>
+      </pre>
+
+      <h2>Registering event handlers</h2>
+      <p>
+        Use the client&apos;s event APIs to observe gateway events like message create, ready, and
+        guild updates. The exact names may differ slightly depending on the version, but the
+        pattern stays the same: register a block and work with strongly-typed model objects.
+      </p>
+      <pre>
+        <code>{`[client onReady:^(CLReadyEvent *event) {
+    NSLog(@"Logged in as %@#%@", event.user.username, event.user.discriminator);
+}];
+
+[client onMessageCreate:^(CLMessageCreateEvent *event) {
+    CLMessage *message = event.message;
+
+    if ([message.content isEqualToString:@"!ping"]) {
+        [client.rest createMessageInChannel:message.channelID
+                                    content:@"Pong!"
+                                    completion:^(CLMessage * _Nullable created, NSError * _Nullable error) {
+            if (error != nil) {
+                NSLog(@"Failed to send pong: %@", error);
+            }
+        }];
+    }
+}];`}</code>
+      </pre>
+
+      <h2>Shutting down</h2>
+      <p>
+        Always perform an explicit shutdown when your application is terminating or when you no
+        longer need the client. This will close the gateway, flush REST requests, and release
+        internal resources.
+      </p>
+      <pre>
+        <code>{`[client disconnectWithCode:1000 reason:@"App shutting down" completion:^(NSError * _Nullable error) {
+    if (error != nil) {
+        NSLog(@"Error during disconnect: %@", error);
+    }
+}];`}</code>
+      </pre>
+
+      <h2>Threading and run loop notes</h2>
+      <p>
+        Caelum is designed to be used from typical UIKit / AppKit apps. Event callbacks are
+        generally invoked on a background queue, so switch back to the main queue before touching
+        UI, just as you would with any networking library.
+      </p>
+      <pre>
+        <code>{`[client onMessageCreate:^(CLMessageCreateEvent *event) {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        // Update UI or notify your controllers here.
+    });
+}];`}</code>
+      </pre>
     </article>
   );
 }
