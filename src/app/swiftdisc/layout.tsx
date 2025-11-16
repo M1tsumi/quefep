@@ -11,7 +11,12 @@ export default function SwiftDiscLayout({ children }: { children: ReactNode }) {
         <div className="text-xl font-semibold">SwiftDisc Docs</div>
         <div className="mt-2 text-xs text-black/60 dark:text-white/60">Fast, ergonomic Swift Discord library</div>
         <div className="mt-4">
-          <Image src={PepeEvil} alt="Pepe" className="rounded-md" placeholder="empty" />
+          <Image
+            src={PepeEvil}
+            alt="Pepe"
+            className="rounded-md transform transition-transform duration-300 hover:-translate-y-1 hover:-rotate-2"
+            placeholder="empty"
+          />
         </div>
         <nav className="mt-6 space-y-2 text-sm">
           <a href="/swiftdisc" className="block hover:underline">Overview</a>

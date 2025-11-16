@@ -11,7 +11,12 @@ export default function CaelumLayout({ children }: { children: ReactNode }) {
         <div className="text-xl font-semibold">Caelum Docs</div>
         <div className="mt-2 text-xs text-black/60 dark:text-white/60">Objective-C Discord library built for stability</div>
         <div className="mt-4">
-          <Image src={PepeMagic} alt="Pepe" className="rounded-md" placeholder="empty" />
+          <Image
+            src={PepeMagic}
+            alt="Pepe"
+            className="rounded-md transform transition-transform duration-300 hover:-translate-y-1 hover:rotate-2"
+            placeholder="empty"
+          />
         </div>
         <nav className="mt-6 space-y-2 text-sm">
           <a href="/caelum" className="block hover:underline">Overview</a>

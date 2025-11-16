@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${comic.variable} ${geistMono.variable} antialiased`}
+        className={`${comic.variable} ${geistMono.variable} antialiased pepe-bg`}
       >
         <link rel="icon" href="/pepe.ico" />
         {children}
