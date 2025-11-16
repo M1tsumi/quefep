@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 
 export function middleware(req: NextRequest) {
   const url = req.nextUrl;
-  const host = req.headers.get('host') || '';
+  const host = (req.headers.get('host') ?? '').split(':')[0];
 
   if (host === 'quefep.uk.invite') {
     return NextResponse.redirect('https://discord.com/invite/6nS2KqxQtj');
