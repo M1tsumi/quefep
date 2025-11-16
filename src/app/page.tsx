@@ -5,7 +5,8 @@ export default function Home() {
         <div className="max-w-5xl mx-auto px-6 py-10">
           <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight">Quef Central</h1>
           <p className="mt-2 text-sm text-black/70 dark:text-white/70 max-w-prose">
-            A minimalist hub for projects by Quefep. Explore active work like SwiftDisc and Caelum, and join the community.
+           A project by Quefep, for projects by Quefep. If you'd like to support this developer, just join the community discord!
+           We're working on projects such as SwiftDisc, Caelum, and more!
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <a href="https://discord.com/users/1051142172130422884" target="_blank" rel="noreferrer" aria-label="Discord profile">
