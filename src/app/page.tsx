@@ -57,9 +57,9 @@ export default function Home() {
       <main className="flex-1">
         <div className="max-w-5xl mx-auto px-6 py-10 space-y-10">
           <section>
-            <div className="flex items-center justify-between">
+            <div className="text-center">
               <h2 className="text-xl font-medium text-[#78B159]">Projects</h2>
-              <span className="text-xs uppercase tracking-wide text-black/50 dark:text-white/50">Docs • Repo • Get Started</span>
+              <span className="mt-1 block text-xs uppercase tracking-wide text-black/50 dark:text-white/50">Docs • Repo • Get Started</span>
             </div>
             <div className="mt-4 grid gap-6 lg:grid-cols-3 items-stretch">
               <div className="lg:col-span-2 grid gap-4 sm:grid-cols-2 auto-rows-fr">
