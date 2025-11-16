@@ -44,7 +44,7 @@ export default function SwiftDiscLayout({ children }: { children: ReactNode }) {
             <div id="doc-content" className="prose dark:prose-invert max-w-none flex-1">
               {children}
             </div>
-            <Toc contentSelector="#doc-content" />
+            <Toc contentSelector="#doc-content" accentColor="#0ea5e9" />
           </div>
         </main>
       </div>

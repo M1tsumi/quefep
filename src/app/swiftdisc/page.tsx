@@ -9,7 +9,7 @@ export default function Page() {
         <li>End-to-end examples demonstrating common tasks</li>
         <li>Comprehensive API reference for every public type and method</li>
       </ul>
-      <h2>Quick links</h2>
+      <h2 className="text-[#0ea5e9]">Quick links</h2>
       <ul>
         <li><a href="/swiftdisc/getting-started">Getting Started</a></li>
         <li><a href="/swiftdisc/api">API Reference</a></li>

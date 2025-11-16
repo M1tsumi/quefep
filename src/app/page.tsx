@@ -59,9 +59,18 @@
                 <p className="mt-2 text-sm text-black/70 dark:text-white/70">
                   A Swift native Discord API Wrapper!
                 </p>
-                <div className="mt-3">
-                  <a href="/swiftdisc" aria-label="SwiftDisc Docs Badge">
-                    <img src="https://img.shields.io/badge/SwiftDisc-Docs-0ea5e9?style=for-the-badge" alt="SwiftDisc Docs" className="h-7" />
+                <div className="mt-4 flex flex-wrap gap-2">
+                  <a
+                    href="/swiftdisc"
+                    className="text-xs uppercase tracking-wide px-3 py-1 rounded-full border border-[#0ea5e980] text-[#0ea5e9] hover:bg-[#0ea5e920]"
+                  >
+                    Docs
+                  </a>
+                  <a
+                    href="/swiftdisc/getting-started"
+                    className="text-xs uppercase tracking-wide px-3 py-1 rounded-full border border-[#78B15980] text-[#78B159] hover:bg-[#78B15920]"
+                  >
+                    Getting Started
                   </a>
                 </div>
               </article>
@@ -81,9 +90,18 @@
                 <p className="mt-2 text-sm text-black/70 dark:text-white/70">
                   The first Objective-C Discord API Wrapper!
                 </p>
-                <div className="mt-3">
-                  <a href="/caelum" aria-label="Caelum Docs Badge">
-                    <img src="https://img.shields.io/badge/Caelum-Docs-22c55e?style=for-the-badge" alt="Caelum Docs" className="h-7" />
+                <div className="mt-4 flex flex-wrap gap-2">
+                  <a
+                    href="/caelum"
+                    className="text-xs uppercase tracking-wide px-3 py-1 rounded-full border border-[#22c55e80] text-[#22c55e] hover:bg-[#22c55e20]"
+                  >
+                    Docs
+                  </a>
+                  <a
+                    href="/caelum/getting-started"
+                    className="text-xs uppercase tracking-wide px-3 py-1 rounded-full border border-[#78B15980] text-[#78B159] hover:bg-[#78B15920]"
+                  >
+                    Getting Started
                   </a>
                 </div>
               </article>
