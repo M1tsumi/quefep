@@ -1,8 +1,9 @@
 async function fetchRepoCommitCountForUser(repo: string, username: string): Promise<number> {
   try {
-    const res = await fetch(`https://api.github.com/repos/${repo}/contributors?per_page=100`, {
+    const res = await fetch(`https://api.github.com/repos/${repo}/commits?author=${username}&per_page=1`, {
       headers: {
         Accept: "application/vnd.github+json",
+        "User-Agent": "Quef-Central",
       },
     });
 
@@ -10,9 +11,23 @@ async function fetchRepoCommitCountForUser(repo: string, username: string): Prom
       return 0;
     }
 
-    const data = (await res.json()) as { login?: string; contributions?: number }[];
-    const contributor = data.find((entry) => entry.login?.toLowerCase() === username.toLowerCase());
-    return contributor?.contributions ?? 0;
+    const linkHeader = res.headers.get("link");
+    if (linkHeader) {
+      const lastSegment = linkHeader
+        .split(",")
+        .map((segment) => segment.trim())
+        .find((segment) => segment.includes('rel="last"'));
+
+      if (lastSegment) {
+        const match = lastSegment.match(/[?&]page=(\d+)/);
+        if (match?.[1]) {
+          return Number(match[1]);
+        }
+      }
+    }
+
+    const data = (await res.json()) as unknown[];
+    return Array.isArray(data) ? data.length : 0;
   } catch {
     return 0;
   }
