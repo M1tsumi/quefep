@@ -3,51 +3,53 @@ export default function Page() {
     <article className="prose dark:prose-invert max-w-none">
       <h1>API Reference</h1>
       <p>
-        SwiftDisc is split into focused modules so you can reason about configuration, HTTP
-        requests, the gateway connection, and your domain models independently. Use this page as a
-        high-level map, then dive into the dedicated sections for details.
+        This section documents every public surface in SwiftDisc. Each page focuses on one module so
+        you can zero in on lifecycle, networking, modeling, or utilities without wading through
+        unrelated text.
       </p>
 
       <h2>Core modules</h2>
       <ul>
         <li>
-          <a href="/swiftdisc/api/client">Client</a> — the main entry point. Responsible for
-          configuration, shards, logging, and connecting REST + Gateway together.
+          <a href="/swiftdisc/api/client">Client</a> — configure tokens, shards, logging, and wire
+          Gateway + REST together.
         </li>
         <li>
-          <a href="/swiftdisc/api/rest">REST</a> — strongly-typed wrappers around Discord&apos;s HTTP
-          API with rate limiting and retry behavior.
+          <a href="/swiftdisc/api/rest">REST</a> — async helpers over Discord HTTP routes with rate
+          limiting and retry semantics.
         </li>
         <li>
-          <a href="/swiftdisc/api/gateway">Gateway</a> — WebSocket connection, intents, dispatch
-          events, and reconnection.
+          <a href="/swiftdisc/api/gateway">Gateway</a> — WebSocket lifecycle, intents, event
+          streaming, and reconnection strategy.
         </li>
       </ul>
 
       <h2>Supporting types</h2>
       <ul>
         <li>
-          <a href="/swiftdisc/api/models">Models</a> — Swift value types representing guilds,
-          channels, members, messages, and more. Designed for use with Swift concurrency.
+          <a href="/swiftdisc/api/models">Models</a> — Codable value types for guilds, channels,
+          members, messages, roles, and attachments.
         </li>
         <li>
-          <a href="/swiftdisc/api/errors">Errors</a> — error enums and result types used across
-          Client, REST, and Gateway.
+          <a href="/swiftdisc/api/errors">Errors</a> — typed errors surfaced across Client, REST,
+          and Gateway to simplify handling.
         </li>
         <li>
-          <a href="/swiftdisc/api/utils">Utils</a> — helpers for caching, logging, and small
-          abstractions you can reuse in your own projects.
+          <a href="/swiftdisc/api/utils">Utils</a> — logging hooks, cache primitives, and testing
+          aids that plug into the core stack.
         </li>
       </ul>
 
-      <h2>How to read this section</h2>
-      <p>
-        If you are building a new bot, start with <strong>Client</strong> to understand lifecycle
-        and configuration, then review <strong>Gateway</strong> for events and
-        <strong> REST</strong> for HTTP calls. Come back to <strong>Models</strong> when you want to
-        explore concrete fields on Discord resources, and <strong>Errors</strong> when you are
-        hardening your error handling.
-      </p>
+      <h2>Suggested reading order</h2>
+      <ol>
+        <li>Start with <strong>Client</strong> to understand configuration and lifecycle.</li>
+        <li>Jump to <strong>Gateway</strong> to learn the event model and command routing patterns.</li>
+        <li>Layer in <strong>REST</strong> once you need outbound HTTP calls.</li>
+        <li>Reference <strong>Models</strong> whenever you need the exact fields exposed by Discord.</li>
+        <li>Consult <strong>Errors</strong> and <strong>Utils</strong> when hardening and tooling up
+          your bot.
+        </li>
+      </ol>
     </article>
   );
 }
