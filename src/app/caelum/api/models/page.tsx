@@ -56,8 +56,8 @@ CLSnowflake userID = ...;
     if (member == nil) { return; }
 
     NSLog(@"Member display name: %@", member.displayName);
-}];`}</code>
-      </pre>
+}];`}
+      />
 
       <h2>IDs and snowflakes</h2>
       <p>

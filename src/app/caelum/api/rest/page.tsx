@@ -49,8 +49,8 @@ embed.footer = [CLEmbedFooter footerWithText:@"Powered by Caelum" iconURL:nil];
     if (error != nil) {
         NSLog(@"Failed to send embed: %@", error);
     }
-}];`}</code>
-      </pre>
+}];`}
+      />
 
       <h2>Editing and deleting messages</h2>
       <CodeBlock
@@ -70,8 +70,8 @@ embed.footer = [CLEmbedFooter footerWithText:@"Powered by Caelum" iconURL:nil];
     if (error != nil) {
         NSLog(@"Failed to delete message: %@", error);
     }
-}];`}</code>
-      </pre>
+}];`}
+      />
 
       <h2>Rate limiting</h2>
       <p>
@@ -87,8 +87,8 @@ embed.footer = [CLEmbedFooter footerWithText:@"Powered by Caelum" iconURL:nil];
     if (error.code == CLRestErrorRateLimited) {
         NSLog(@"Hit a rate limit; request will be retried automatically.");
     }
-}];`}</code>
-      </pre>
+}];`}
+      />
     </article>
   );
 }

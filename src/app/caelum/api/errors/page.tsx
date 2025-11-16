@@ -45,8 +45,8 @@ export default function Page() {
     if (event.code == 4004) {
         NSLog(@"Authentication failed. Check your bot token.");
     }
-}];`}</code>
-      </pre>
+}];`}
+      />
 
       <h2>Retry and backoff</h2>
       <p>

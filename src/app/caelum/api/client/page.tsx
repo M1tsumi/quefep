@@ -47,7 +47,7 @@ client.presence = [CLPresence presenceWithStatus:CLPresenceStatusOnline
 
       <h2>Registering event handlers</h2>
       <p>
-        Use the client&apos;s event APIs to observe gateway events like message create, ready, and
+        Use the client's event APIs to observe gateway events like message create, ready, and
         guild updates. The exact names may differ slightly depending on the version, but the
         pattern stays the same: register a block and work with strongly-typed model objects.
       </p>
@@ -69,8 +69,8 @@ client.presence = [CLPresence presenceWithStatus:CLPresenceStatusOnline
             }
         }];
     }
-}];`}</code>
-      </pre>
+}];`}
+      />
 
       <h2>Shutting down</h2>
       <p>
@@ -84,8 +84,8 @@ client.presence = [CLPresence presenceWithStatus:CLPresenceStatusOnline
     if (error != nil) {
         NSLog(@"Error during disconnect: %@", error);
     }
-}];`}</code>
-      </pre>
+}];`}
+      />
 
       <h2>Threading and run loop notes</h2>
       <p>
@@ -99,8 +99,8 @@ client.presence = [CLPresence presenceWithStatus:CLPresenceStatusOnline
     dispatch_async(dispatch_get_main_queue(), ^{
         // Update UI or notify your controllers here.
     });
-}];`}</code>
-      </pre>
+}];`}
+      />
     </article>
   );
 }
