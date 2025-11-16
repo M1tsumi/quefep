@@ -7,7 +7,7 @@ function escapeHtml(code: string): string {
     .replace(/>/g, '&gt;');
 }
 
-export function highlightCode(code: string, _language: CodeLanguage = 'text'): string {
+export function highlightCode(code: string): string {
   // For now, rely on VS Code's editor coloring and keep runtime output simple
   // and robust by only escaping HTML.
   return escapeHtml(code);
@@ -19,7 +19,7 @@ interface CodeBlockProps {
 }
 
 export default function CodeBlock({ code, language = 'text' }: CodeBlockProps) {
-  const highlighted = highlightCode(code, language);
+  const highlighted = highlightCode(code);
 
   return (
     <pre className="code-block">
