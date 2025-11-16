@@ -25,11 +25,11 @@
                 className="h-7"
               />
             </a>
-            <a href="/swiftdisc" className="text-xs sm:text-sm px-3 py-2 rounded-full border border-black/10 dark:border-white/15 hover:bg-black/[.05] dark:hover:bg-white/[.06]">
-              SwiftDisc Docs
+            <a href="/swiftdisc" aria-label="SwiftDisc Docs Badge">
+              <img src="https://img.shields.io/badge/SwiftDisc-Docs-0ea5e9?style=for-the-badge" alt="SwiftDisc Docs" className="h-7" />
             </a>
-            <a href="/caelum" className="text-xs sm:text-sm px-3 py-2 rounded-full border border-black/10 dark:border-white/15 hover:bg-black/[.05] dark:hover:bg-white/[.06]">
-              Caelum Docs
+            <a href="/caelum" aria-label="Caelum Docs Badge">
+              <img src="https://img.shields.io/badge/Caelum-Docs-22c55e?style=for-the-badge" alt="Caelum Docs" className="h-7" />
             </a>
           </div>
         </div>
@@ -56,11 +56,8 @@
                   Discord tooling focused on speed and developer ergonomics.
                 </p>
                 <div className="mt-3">
-                  <a
-                    href="/swiftdisc"
-                    className="text-sm px-3 py-2 rounded-md border border-black/10 dark:border-white/15 hover:bg-black/[.05] dark:hover:bg-white/[.06]"
-                  >
-                    View Docs
+                  <a href="/swiftdisc" aria-label="SwiftDisc Docs Badge">
+                    <img src="https://img.shields.io/badge/SwiftDisc-Docs-0ea5e9?style=for-the-badge" alt="SwiftDisc Docs" className="h-7" />
                   </a>
                 </div>
               </article>
@@ -81,11 +78,8 @@
                   A modern, modular codebase exploring scalable Discord bot patterns.
                 </p>
                 <div className="mt-3">
-                  <a
-                    href="/caelum"
-                    className="text-sm px-3 py-2 rounded-md border border-black/10 dark:border-white/15 hover:bg-black/[.05] dark:hover:bg-white/[.06]"
-                  >
-                    View Docs
+                  <a href="/caelum" aria-label="Caelum Docs Badge">
+                    <img src="https://img.shields.io/badge/Caelum-Docs-22c55e?style=for-the-badge" alt="Caelum Docs" className="h-7" />
                   </a>
                 </div>
               </article>
