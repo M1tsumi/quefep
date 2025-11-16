@@ -1,40 +1,51 @@
  import Image from 'next/image';
- import PepeMain from '@/app/assets/pepe-main.png';
- import CommitHistory from '@/app/components/CommitHistory';
- export default function Home() {
+import PepeMain from '@/app/assets/pepe-main.png';
+import CommitHistory from '@/app/components/CommitHistory';
+import TotalCommitsBadge from '@/app/components/TotalCommitsBadge';
+
+export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
       <header className="border-b border-black/10 dark:border-white/10/60">
-        <div className="max-w-5xl mx-auto px-6 py-10 text-center">
-          <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight">Quef Central</h1>
-          <p className="mt-2 text-sm text-black/70 dark:text-white/70 max-w-prose mx-auto">
-            Portfolio for the projects of Quefep.
-            <br />
-            <span className="mt-2 text-sm text-black/70 dark:text-white/70 max-w-prose">
-              A project by Quefep, for projects by Quefep!
-            </span>
-          </p>
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-            <a href="https://discord.com/users/1051142172130422884" target="_blank" rel="noreferrer" aria-label="Discord profile">
-              <img
-                src="https://img.shields.io/badge/Discord-Profile-5865F2?logo=discord&logoColor=white&style=for-the-badge"
-                alt="Discord profile badge"
-                className="h-7"
-              />
-            </a>
-            <a href="https://github.com/M1tsumi" target="_blank" rel="noreferrer" aria-label="GitHub profile">
-              <img
-                src="https://img.shields.io/badge/GitHub-M1tsumi-181717?logo=github&logoColor=white&style=for-the-badge"
-                alt="GitHub profile badge"
-                className="h-7"
-              />
-            </a>
-            <a href="/swiftdisc" aria-label="SwiftDisc Docs Badge">
-              <img src="https://img.shields.io/badge/SwiftDisc-Docs-0ea5e9?style=for-the-badge" alt="SwiftDisc Docs" className="h-7" />
-            </a>
-            <a href="/caelum" aria-label="Caelum Docs Badge">
-              <img src="https://img.shields.io/badge/Caelum-Docs-22c55e?style=for-the-badge" alt="Caelum Docs" className="h-7" />
-            </a>
+        <div className="max-w-5xl mx-auto px-6 py-10">
+          <div className="flex items-center justify-between gap-4">
+            <div className="flex-1" />
+            <div className="flex justify-center">
+              <TotalCommitsBadge />
+            </div>
+            <div className="flex-1 flex justify-end" />
+          </div>
+          <div className="mt-8 text-center">
+            <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight">Quef Central</h1>
+            <p className="mt-2 text-sm text-black/70 dark:text-white/70 max-w-prose mx-auto">
+              Portfolio for the projects of Quefep.
+              <br />
+              <span className="mt-2 text-sm text-black/70 dark:text-white/70 max-w-prose">
+                A project by Quefep, for projects by Quefep!
+              </span>
+            </p>
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+              <a href="https://discord.com/users/1051142172130422884" target="_blank" rel="noreferrer" aria-label="Discord profile">
+                <img
+                  src="https://img.shields.io/badge/Discord-Profile-5865F2?logo=discord&logoColor=white&style=for-the-badge"
+                  alt="Discord profile badge"
+                  className="h-7"
+                />
+              </a>
+              <a href="https://github.com/M1tsumi" target="_blank" rel="noreferrer" aria-label="GitHub profile">
+                <img
+                  src="https://img.shields.io/badge/GitHub-M1tsumi-181717?logo=github&logoColor=white&style=for-the-badge"
+                  alt="GitHub profile badge"
+                  className="h-7"
+                />
+              </a>
+              <a href="/swiftdisc" aria-label="SwiftDisc Docs Badge">
+                <img src="https://img.shields.io/badge/SwiftDisc-Docs-0ea5e9?style=for-the-badge" alt="SwiftDisc Docs" className="h-7" />
+              </a>
+              <a href="/caelum" aria-label="Caelum Docs Badge">
+                <img src="https://img.shields.io/badge/Caelum-Docs-22c55e?style=for-the-badge" alt="Caelum Docs" className="h-7" />
+              </a>
+            </div>
           </div>
         </div>
       </header>
