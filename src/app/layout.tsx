@@ -15,6 +15,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Quef Central",
   description: "A minimalist hub for projects by M1tsumi — SwiftDisc, Caelum, and more.",
+  icons: {
+    icon: "/pepe.ico",
+    shortcut: "/pepe.ico",
+    apple: "/pepe.ico",
+  },
 };
 
 export default function RootLayout({
@@ -27,6 +32,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <link rel="icon" href="/pepe.ico" />
         {children}
       </body>
     </html>

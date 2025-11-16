@@ -23,6 +23,12 @@ export default function Home() {
                 className="h-7"
               />
             </a>
+            <a href="/swiftdisc" className="text-xs sm:text-sm px-3 py-2 rounded-full border border-black/10 dark:border-white/15 hover:bg-black/[.05] dark:hover:bg-white/[.06]">
+              SwiftDisc Docs
+            </a>
+            <a href="/caelum" className="text-xs sm:text-sm px-3 py-2 rounded-full border border-black/10 dark:border-white/15 hover:bg-black/[.05] dark:hover:bg-white/[.06]">
+              Caelum Docs
+            </a>
           </div>
         </div>
       </header>
@@ -47,6 +53,14 @@ export default function Home() {
                 <p className="mt-2 text-sm text-black/70 dark:text-white/70">
                   Discord tooling focused on speed and developer ergonomics.
                 </p>
+                <div className="mt-3">
+                  <a
+                    href="/swiftdisc"
+                    className="text-sm px-3 py-2 rounded-md border border-black/10 dark:border-white/15 hover:bg-black/[.05] dark:hover:bg-white/[.06]"
+                  >
+                    View Docs
+                  </a>
+                </div>
               </article>
 
               <article className="rounded-lg border border-black/10 dark:border-white/10 p-5 hover:bg-black/[.03] dark:hover:bg-white/[.03] transition-colors">
@@ -64,6 +78,14 @@ export default function Home() {
                 <p className="mt-2 text-sm text-black/70 dark:text-white/70">
                   A modern, modular codebase exploring scalable Discord bot patterns.
                 </p>
+                <div className="mt-3">
+                  <a
+                    href="/caelum"
+                    className="text-sm px-3 py-2 rounded-md border border-black/10 dark:border-white/15 hover:bg-black/[.05] dark:hover:bg-white/[.06]"
+                  >
+                    View Docs
+                  </a>
+                </div>
               </article>
             </div>
           </section>
