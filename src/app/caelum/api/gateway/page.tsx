@@ -65,8 +65,8 @@ CLClient *client = [[CLClient alloc] initWithConfiguration:config];
     } else if (event.type == CLGatewaySessionEventTypeInvalidated) {
         NSLog(@"Session invalidated; performed a fresh identify.");
     }
-}];`}</code>
-      </pre>
+}];`}
+      />
     </article>
   );
 }
