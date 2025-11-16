@@ -20,7 +20,7 @@ export default function SwiftDiscLayout({ children }: { children: ReactNode }) {
             />
           </div>
           <nav className="mt-6 space-y-2 text-sm">
-            <a href="/swiftdisc" className="block hover:underline">Overview</a>
+            <a href="/swiftdisc" className="block hover:underline text-[#0ea5e9]">Overview</a>
             <a href="/swiftdisc/getting-started" className="block hover:underline">Getting Started</a>
             <div className="mt-4 text-[10px] uppercase tracking-wide text-black/60 dark:text-white/60">API Reference</div>
             <a href="/swiftdisc/api" className="block hover:underline">Index</a>

@@ -20,7 +20,7 @@ export default function CaelumLayout({ children }: { children: ReactNode }) {
           />
         </div>
         <nav className="mt-6 space-y-2 text-sm">
-          <a href="/caelum" className="block hover:underline">Overview</a>
+          <a href="/caelum" className="block hover:underline text-[#22c55e]">Overview</a>
           <a href="/caelum/getting-started" className="block hover:underline">Getting Started</a>
           <div className="mt-4 text-[10px] uppercase tracking-wide text-black/60 dark:text-white/60">API Reference</div>
           <a href="/caelum/api" className="block hover:underline">Index</a>
