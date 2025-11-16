@@ -57,17 +57,16 @@ export default function Home() {
       <main className="flex-1">
         <div className="max-w-5xl mx-auto px-6 py-10 space-y-10">
           <section>
-            <div className="grid gap-6 lg:grid-cols-3 items-stretch">
-              <div className="lg:col-span-2 space-y-4 flex flex-col h-full">
-                <div className="flex items-center justify-between">
-                  <h2 className="text-xl font-medium text-[#78B159]">Projects</h2>
-                  <span className="text-xs uppercase tracking-wide text-black/50 dark:text-white/50">Docs • Repo • Get Started</span>
-                </div>
-                <div className="grid gap-4 sm:grid-cols-2 auto-rows-fr">
-                  <article className="rounded-lg border border-[#78B15933] dark:border-[#78B15966] p-5 bg-black/10 dark:bg-black/40 hover:bg-[#78B1591f] dark:hover:bg-[#4A7C5940] transition-colors flex flex-col h-full">
-                    <h3 className="text-lg font-semibold">SwiftDisc</h3>
-                    <p className="mt-2 text-sm text-black/70 dark:text-white/70 flex-1">A Swift native Discord API wrapper.</p>
-                    <div className="mt-5 flex flex-wrap gap-2">
+            <div className="flex items-center justify-between">
+              <h2 className="text-xl font-medium text-[#78B159]">Projects</h2>
+              <span className="text-xs uppercase tracking-wide text-black/50 dark:text-white/50">Docs • Repo • Get Started</span>
+            </div>
+            <div className="mt-4 grid gap-6 lg:grid-cols-3 items-stretch">
+              <div className="lg:col-span-2 grid gap-4 sm:grid-cols-2 auto-rows-fr">
+                <article className="rounded-lg border border-[#78B15933] dark:border-[#78B15966] p-5 bg-black/10 dark:bg-black/40 hover:bg-[#78B1591f] dark:hover:bg-[#4A7C5940] transition-colors flex flex-col h-full">
+                  <h3 className="text-lg font-semibold">SwiftDisc</h3>
+                  <p className="mt-2 text-sm text-black/70 dark:text-white/70 flex-1">A Swift native Discord API wrapper.</p>
+                  <div className="mt-5 flex flex-wrap gap-2">
                       <a
                         href="/swiftdisc"
                         className="text-xs uppercase tracking-wide px-3 py-1 rounded-full border border-[#0ea5e980] text-[#0ea5e9] hover:bg-[#0ea5e920]"
@@ -91,10 +90,10 @@ export default function Home() {
                     </div>
                   </article>
 
-                  <article className="rounded-lg border border-[#78B15933] dark:border-[#78B15966] p-5 bg-black/10 dark:bg-black/40 hover:bg-[#78B1591f] dark:hover.bg-[#4A7C5940] transition-colors flex flex-col h-full">
-                    <h3 className="text-lg font-semibold">Caelum</h3>
-                    <p className="mt-2 text-sm text-black/70 dark:text-white/70 flex-1">Objective-C first Discord automation toolkit.</p>
-                    <div className="mt-5 flex flex-wrap gap-2">
+                <article className="rounded-lg border border-[#78B15933] dark:border-[#78B15966] p-5 bg-black/10 dark:bg-black/40 hover:bg-[#78B1591f] dark:hover.bg-[#4A7C5940] transition-colors flex flex-col h-full">
+                  <h3 className="text-lg font-semibold">Caelum</h3>
+                  <p className="mt-2 text-sm text-black/70 dark:text-white/70 flex-1">Objective-C first Discord automation toolkit.</p>
+                  <div className="mt-5 flex flex-wrap gap-2">
                       <a
                         href="/caelum"
                         className="text-xs uppercase tracking-wide px-3 py-1 rounded-full border border-[#22c55e80] text-[#22c55e] hover:bg-[#22c55e20]"
@@ -115,9 +114,8 @@ export default function Home() {
                       >
                         Getting Started
                       </a>
-                    </div>
-                  </article>
-                </div>
+                  </div>
+                </article>
               </div>
 
               <div className="rounded-lg border border-[#78B15933] dark:border-[#78B15966] bg-black/5 dark:bg-black/30 p-5 flex flex-col h-full">
