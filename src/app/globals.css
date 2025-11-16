@@ -100,6 +100,22 @@ article.prose code {
   color: #fbbf24;
 }
 
+.typing-dots {
+  display: inline-flex;
+  overflow: hidden;
+  width: 1.5ch;
+  animation: typingDots 1.2s steps(4, end) infinite;
+}
+
+@keyframes typingDots {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 1.5ch;
+  }
+}
+
 .code-comment {
   color: #9ca3af;
 }

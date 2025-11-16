@@ -82,9 +82,23 @@ function RepoCommits({
         </Link>
       </div>
       {commits.length === 0 ? (
-        <p className="mt-3 text-xs text-black/60 dark:text-white/60">
-          Could not load recent commits.
-        </p>
+        <div className="mt-3 text-xs text-black/60 dark:text-white/60">
+          <p className="font-medium">
+            Pepe is fetching fresh commits
+            <span className="typing-dots" aria-hidden="true"> ...</span>
+          </p>
+          <p className="mt-1 text-[11px]">
+            In the meantime, peek directly on GitHub to see what&apos;s cooking.
+          </p>
+          <Link
+            href={`https://github.com/${repo}`}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1 text-[11px] text-[#78B159] hover:text-[#4A7C59]"
+          >
+            Open {name} repo ↗
+          </Link>
+        </div>
       ) : (
         <ul className="mt-3 space-y-2 text-xs text-black/70 dark:text-white/70">
           {commits.map((commit) => {
