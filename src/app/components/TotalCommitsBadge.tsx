@@ -23,11 +23,11 @@ export default async function TotalCommitsBadge() {
   const repos = ["M1tsumi/SwiftDisc", "M1tsumi/Caelum"];
   const counts = await Promise.all(repos.map((repo) => fetchRepoCommitCountForUser(repo, username)));
   const total = counts.reduce((acc, count) => acc + count, 0);
+  const badgeUrl = `https://img.shields.io/badge/Total%20Contributions-${encodeURIComponent(total.toString())}-78B159?style=for-the-badge&logo=github&logoColor=white`;
 
   return (
-    <div className="inline-flex items-center gap-3 rounded-full border border-[#78B15980] bg-white/80 px-4 py-2 text-xs uppercase tracking-wide text-black/70 shadow-sm dark:border-[#78B15966] dark:bg-[#0e0e0e80] dark:text-white/80">
-      <span className="text-[11px] font-medium text-[#4A7C59] dark:text-[#78B159]">Total Commits</span>
-      <span className="text-lg font-semibold text-black dark:text-white">{total.toLocaleString()}</span>
+    <div className="fixed top-4 right-4 z-50 drop-shadow-lg">
+      <img src={badgeUrl} alt={`Total contributions for ${username}: ${total}`} className="h-8 w-auto" />
     </div>
   );
 }

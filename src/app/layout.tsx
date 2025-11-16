@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist_Mono } from "next/font/google";
 import "./globals.css";
+import TotalCommitsBadge from "./components/TotalCommitsBadge";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -28,6 +29,7 @@ export default function RootLayout({
         className={`${geistMono.variable} antialiased`}
       >
         <link rel="icon" href="/pepe.ico" />
+        <TotalCommitsBadge />
         {children}
       </body>
     </html>
