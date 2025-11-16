@@ -1,3 +1,5 @@
+import CodeBlock from "@/app/components/CodeBlock";
+
 export default function Page() {
   return (
     <article className="prose dark:prose-invert max-w-none">
@@ -20,8 +22,9 @@ export default function Page() {
         Construct a configuration, then create a <code>CLClient</code> and connect. You typically do
         this during app launch, e.g. from your app delegate.
       </p>
-      <pre>
-        <code>{`#import <Caelum/Caelum.h>
+      <CodeBlock
+        language="objective-c"
+        code={`#import <Caelum/Caelum.h>
 
 CLClientConfiguration *config = [[CLClientConfiguration alloc] initWithToken:@"Bot YOUR_TOKEN_HERE"];
 config.intents = CLIntentsGuilds | CLIntentsGuildMessages | CLIntentsMessageContent;
@@ -39,8 +42,8 @@ client.presence = [CLPresence presenceWithStatus:CLPresenceStatusOnline
     }
 
     NSLog(@"Caelum client connected.");
-}];`}</code>
-      </pre>
+}];`}
+      />
 
       <h2>Registering event handlers</h2>
       <p>
@@ -48,8 +51,9 @@ client.presence = [CLPresence presenceWithStatus:CLPresenceStatusOnline
         guild updates. The exact names may differ slightly depending on the version, but the
         pattern stays the same: register a block and work with strongly-typed model objects.
       </p>
-      <pre>
-        <code>{`[client onReady:^(CLReadyEvent *event) {
+      <CodeBlock
+        language="objective-c"
+        code={`[client onReady:^(CLReadyEvent *event) {
     NSLog(@"Logged in as %@#%@", event.user.username, event.user.discriminator);
 }];
 
@@ -74,8 +78,9 @@ client.presence = [CLPresence presenceWithStatus:CLPresenceStatusOnline
         longer need the client. This will close the gateway, flush REST requests, and release
         internal resources.
       </p>
-      <pre>
-        <code>{`[client disconnectWithCode:1000 reason:@"App shutting down" completion:^(NSError * _Nullable error) {
+      <CodeBlock
+        language="objective-c"
+        code={`[client disconnectWithCode:1000 reason:@"App shutting down" completion:^(NSError * _Nullable error) {
     if (error != nil) {
         NSLog(@"Error during disconnect: %@", error);
     }
@@ -88,8 +93,9 @@ client.presence = [CLPresence presenceWithStatus:CLPresenceStatusOnline
         generally invoked on a background queue, so switch back to the main queue before touching
         UI, just as you would with any networking library.
       </p>
-      <pre>
-        <code>{`[client onMessageCreate:^(CLMessageCreateEvent *event) {
+      <CodeBlock
+        language="objective-c"
+        code={`[client onMessageCreate:^(CLMessageCreateEvent *event) {
     dispatch_async(dispatch_get_main_queue(), ^{
         // Update UI or notify your controllers here.
     });

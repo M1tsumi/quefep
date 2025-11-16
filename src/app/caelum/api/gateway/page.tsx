@@ -1,3 +1,5 @@
+import CodeBlock from "@/app/components/CodeBlock";
+
 export default function Page() {
   return (
     <article className="prose dark:prose-invert max-w-none">
@@ -14,14 +16,15 @@ export default function Page() {
         count in <code>CLClientConfiguration</code>. Caelum will open one connection per shard and
         distribute events.
       </p>
-      <pre>
-        <code>{`CLClientConfiguration *config = [[CLClientConfiguration alloc] initWithToken:@"Bot YOUR_TOKEN_HERE"];
+      <CodeBlock
+        language="objective-c"
+        code={`CLClientConfiguration *config = [[CLClientConfiguration alloc] initWithToken:@"Bot YOUR_TOKEN_HERE"];
 config.intents = CLIntentsGuilds | CLIntentsGuildMessages;
 config.shardCount = 1; // or a higher number for large bots
 
 CLClient *client = [[CLClient alloc] initWithConfiguration:config];
-[client connectWithCompletion:nil];`}</code>
-      </pre>
+[client connectWithCompletion:nil];`}
+      />
 
       <h2>Listening to low-level gateway events</h2>
       <p>
@@ -29,8 +32,9 @@ CLClient *client = [[CLClient alloc] initWithConfiguration:config];
         For advanced scenarios you can subscribe directly to gateway packets or connection state
         changes.
       </p>
-      <pre>
-        <code>{`[client.gateway onConnectionStateChange:^(CLGatewayConnectionState state) {
+      <CodeBlock
+        language="objective-c"
+        code={`[client.gateway onConnectionStateChange:^(CLGatewayConnectionState state) {
     switch (state) {
         case CLGatewayConnectionStateConnecting:
             NSLog(@"Gateway connecting...");
@@ -45,16 +49,17 @@ CLClient *client = [[CLClient alloc] initWithConfiguration:config];
             NSLog(@"Gateway closed.");
             break;
     }
-}];`}</code>
-      </pre>
+}];`}
+      />
 
       <h2>Reconnection and resume</h2>
       <p>
         Caelum automatically attempts to resume sessions when possible. If resume fails, it will
         perform a fresh identify. You can hook into these transitions for metrics or logging.
       </p>
-      <pre>
-        <code>{`[client.gateway onSessionEvent:^(CLGatewaySessionEvent *event) {
+      <CodeBlock
+        language="objective-c"
+        code={`[client.gateway onSessionEvent:^(CLGatewaySessionEvent *event) {
     if (event.type == CLGatewaySessionEventTypeResumed) {
         NSLog(@"Resumed Discord session.");
     } else if (event.type == CLGatewaySessionEventTypeInvalidated) {

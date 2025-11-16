@@ -1,3 +1,5 @@
+import CodeBlock from "@/app/components/CodeBlock";
+
 export default function Page() {
   return (
     <article className="prose dark:prose-invert max-w-none">
@@ -5,25 +7,36 @@ export default function Page() {
       <p>High-level helpers over Discord REST v10 for messages, embeds, files, emoji, and more. All calls are async/await and typed.</p>
 
       <h2>Send a message</h2>
-      <pre><code>{`let message = try await client.sendMessage(
+      <CodeBlock
+        language="swift"
+        code={`let message = try await client.sendMessage(
   channelId: channelId,
   content: "Hello, world!"
-)`}</code></pre>
+)`}
+      />
 
       <h2>Embeds</h2>
-      <pre><code>{`let embed = Embed(title: "News", description: "All the latest")
-try await client.sendMessage(channelId: channelId, embeds: [embed])`}</code></pre>
+      <CodeBlock
+        language="swift"
+        code={`let embed = Embed(title: "News", description: "All the latest")
+try await client.sendMessage(channelId: channelId, embeds: [embed])`}
+      />
 
       <h2>File uploads</h2>
-      <pre><code>{`let data = try Data(contentsOf: URL(fileURLWithPath: "/path/to/image.png"))
+      <CodeBlock
+        language="swift"
+        code={`let data = try Data(contentsOf: URL(fileURLWithPath: "/path/to/image.png"))
 try await client.sendMessage(
   channelId: channelId,
   content: "With attachment",
   files: [Attachment(name: "image.png", data: data, mime: "image/png")]
-)`}</code></pre>
+)`}
+      />
 
       <h2>Application Emoji (CRUD)</h2>
-      <pre><code>{`// Create (image should be a data URI string)
+      <CodeBlock
+        language="swift"
+        code={`// Create (image should be a data URI string)
 let created = try await client.createAppEmoji(
   applicationId: appId,
   name: "party",
@@ -36,7 +49,8 @@ let updated = try await client.updateAppEmoji(
   updates: ["name": .string("party_blob")]
 )
 
-try await client.deleteAppEmoji(applicationId: appId, emojiId: "123")`}</code></pre>
+try await client.deleteAppEmoji(applicationId: appId, emojiId: "123")`}
+      />
 
       <h2>Rate limits</h2>
       <p>SwiftDisc respects Discord rate limits. Do not parallelize identical routes excessively; await results and handle 429 retries automatically surfaced by the client.</p>

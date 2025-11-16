@@ -1,3 +1,5 @@
+import CodeBlock from "@/app/components/CodeBlock";
+
 export default function Page() {
   return (
     <article className="prose dark:prose-invert max-w-none">
@@ -8,10 +10,11 @@ export default function Page() {
         Intents are set on <code>CLClientConfiguration</code> before you create the client. See the
         Client docs for a full example.
       </p>
-      <pre>
-        <code>{`CLClientConfiguration *config = [[CLClientConfiguration alloc] initWithToken:@"Bot YOUR_TOKEN_HERE"];
-config.intents = CLIntentsGuilds | CLIntentsGuildMessages | CLIntentsMessageContent;`}</code>
-      </pre>
+      <CodeBlock
+        language="objective-c"
+        code={`CLClientConfiguration *config = [[CLClientConfiguration alloc] initWithToken:@"Bot YOUR_TOKEN_HERE"];
+config.intents = CLIntentsGuilds | CLIntentsGuildMessages | CLIntentsMessageContent;`}
+      />
 
       <h2>Which platforms does Caelum support?</h2>
       <p>

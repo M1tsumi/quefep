@@ -1,3 +1,5 @@
+import CodeBlock from "@/app/components/CodeBlock";
+
 export default function Page() {
   return (
     <article className="prose dark:prose-invert max-w-none">
@@ -5,16 +7,21 @@ export default function Page() {
       <p>The <code>DiscordClient</code> coordinates Gateway and REST, manages configuration, and exposes a typed async event stream.</p>
 
       <h2>Create and Configure</h2>
-      <pre><code>{`import SwiftDisc
+      <CodeBlock
+        language="swift"
+        code={`import SwiftDisc
 
 let token = ProcessInfo.processInfo.environment["DISCORD_BOT_TOKEN"] ?? ""
 let client = DiscordClient(token: token)
 
 // Intents control which events you receive
-let intents: Intents = [.guilds, .guildMessages, .messageContent]`}</code></pre>
+let intents: Intents = [.guilds, .guildMessages, .messageContent]`}
+      />
 
       <h2>Login, Connect, and Events</h2>
-      <pre><code>{`try await client.loginAndConnect(intents: intents)
+      <CodeBlock
+        language="swift"
+        code={`try await client.loginAndConnect(intents: intents)
 
 for await event in client.events {
     switch event {
@@ -25,11 +32,12 @@ for await event in client.events {
     default:
         break
     }
-}`}</code></pre>
+}`}
+      />
 
       <h2>Shutdown</h2>
       <p>Gracefully close the Gateway and flush REST work:</p>
-      <pre><code>{`await client.close()`}</code></pre>
+      <CodeBlock language="swift" code={`await client.close()`} />
 
       <h2>Error handling</h2>
       <p>Wrap connect and REST calls in <code>do/catch</code>. Retry transient errors; surface Discord error codes to logs.</p>

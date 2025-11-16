@@ -1,3 +1,5 @@
+import CodeBlock from "@/app/components/CodeBlock";
+
 export default function Page() {
   return (
     <article className="prose dark:prose-invert max-w-none">
@@ -18,8 +20,9 @@ export default function Page() {
       </ul>
 
       <h2>Inspecting models from events</h2>
-      <pre>
-        <code>{`[client onMessageCreate:^(CLMessageCreateEvent *event) {
+      <CodeBlock
+        language="objective-c"
+        code={`[client onMessageCreate:^(CLMessageCreateEvent *event) {
     CLMessage *message = event.message;
     CLUser *author = message.author;
 
@@ -27,16 +30,17 @@ export default function Page() {
           message.channelID,
           author.username,
           message.content);
-}];`}</code>
-      </pre>
+}];`}
+      />
 
       <h2>Resolving guild and member data</h2>
       <p>
         Gateway events often reference IDs. Use REST helpers to fetch the full objects when you
         need more details.
       </p>
-      <pre>
-        <code>{`CLSnowflake guildID = ...;
+      <CodeBlock
+        language="objective-c"
+        code={`CLSnowflake guildID = ...;
 CLSnowflake userID = ...;
 
 [client.rest fetchGuildWithID:guildID
@@ -60,10 +64,11 @@ CLSnowflake userID = ...;
         Most identifiers are represented by <code>CLSnowflake</code>, a lightweight wrapper around
         Discord&apos;s snowflake format. You can convert to and from strings when storing IDs.
       </p>
-      <pre>
-        <code>{`CLSnowflake channelID = [CLSnowflake snowflakeWithString:@"123456789012345678"];
-NSString *raw = channelID.stringValue;`}</code>
-      </pre>
+      <CodeBlock
+        language="objective-c"
+        code={`CLSnowflake channelID = [CLSnowflake snowflakeWithString:@"123456789012345678"];
+NSString *raw = channelID.stringValue;`}
+      />
     </article>
   );
 }

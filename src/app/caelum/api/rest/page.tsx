@@ -1,3 +1,5 @@
+import CodeBlock from "@/app/components/CodeBlock";
+
 export default function Page() {
   return (
     <article className="prose dark:prose-invert max-w-none">
@@ -12,8 +14,9 @@ export default function Page() {
         The most common operation is sending messages. Use the convenience helpers on the REST
         client to send plain text, embeds, or both.
       </p>
-      <pre>
-        <code>{`CLSnowflake channelID = ...; // the channel you want to send to
+      <CodeBlock
+        language="objective-c"
+        code={`CLSnowflake channelID = ...; // the channel you want to send to
 
 [client.rest createMessageInChannel:channelID
                             content:@"Hello from Caelum!"
@@ -24,16 +27,17 @@ export default function Page() {
     }
 
     NSLog(@"Sent message with ID: %@", message.ID);
-}];`}</code>
-      </pre>
+}];`}
+      />
 
       <h2>Embeds</h2>
       <p>
         Use <code>CLEmbed</code> to construct rich embedded content. Fields, colors, and authors
         are all created with small helper methods.
       </p>
-      <pre>
-        <code>{`CLEmbed *embed = [CLEmbed embedWithTitle:@"Status"
+      <CodeBlock
+        language="objective-c"
+        code={`CLEmbed *embed = [CLEmbed embedWithTitle:@"Status"
                                            description:@"Everything is online."
                                                 color:0x57F287];
 embed.footer = [CLEmbedFooter footerWithText:@"Powered by Caelum" iconURL:nil];
@@ -49,8 +53,9 @@ embed.footer = [CLEmbedFooter footerWithText:@"Powered by Caelum" iconURL:nil];
       </pre>
 
       <h2>Editing and deleting messages</h2>
-      <pre>
-        <code>{`[client.rest editMessageWithID:message.ID
+      <CodeBlock
+        language="objective-c"
+        code={`[client.rest editMessageWithID:message.ID
                               inChannel:channelID
                                  content:@"Updated content"
                                completion:^(CLMessage * _Nullable updated, NSError * _Nullable error) {
@@ -74,8 +79,9 @@ embed.footer = [CLEmbedFooter footerWithText:@"Powered by Caelum" iconURL:nil];
         when necessary. You normally do not need to handle this yourself, but you can observe
         errors for logging or metrics.
       </p>
-      <pre>
-        <code>{`[client.rest createMessageInChannel:channelID
+      <CodeBlock
+        language="objective-c"
+        code={`[client.rest createMessageInChannel:channelID
                             content:@"Spamming?"
                             completion:^(CLMessage * _Nullable message, NSError * _Nullable error) {
     if (error.code == CLRestErrorRateLimited) {

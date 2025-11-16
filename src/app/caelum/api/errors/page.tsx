@@ -1,3 +1,5 @@
+import CodeBlock from "@/app/components/CodeBlock";
+
 export default function Page() {
   return (
     <article className="prose dark:prose-invert max-w-none">
@@ -13,8 +15,9 @@ export default function Page() {
         well-known codes for common situations like bad requests, missing permissions, and rate
         limiting.
       </p>
-      <pre>
-        <code>{`[client.rest createMessageInChannel:channelID
+      <CodeBlock
+        language="objective-c"
+        code={`[client.rest createMessageInChannel:channelID
                             content:@"secret admin-only command"
                             completion:^(CLMessage * _Nullable message, NSError * _Nullable error) {
     if (error != nil) {
@@ -26,16 +29,17 @@ export default function Page() {
             NSLog(@"Unexpected REST error: %@", error);
         }
     }
-}];`}</code>
-      </pre>
+}];`}
+      />
 
       <h2>Gateway close codes</h2>
       <p>
         When the gateway connection closes, Caelum exposes the close code and whether the
         connection will be retried.
       </p>
-      <pre>
-        <code>{`[client.gateway onClose:^(CLGatewayCloseEvent *event) {
+      <CodeBlock
+        language="objective-c"
+        code={`[client.gateway onClose:^(CLGatewayCloseEvent *event) {
     NSLog(@"Gateway closed with code %ld (clean=%@)", (long)event.code, event.clean ? @"YES" : @"NO");
 
     if (event.code == 4004) {
