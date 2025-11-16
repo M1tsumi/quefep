@@ -80,6 +80,30 @@ article.prose code {
   font-size: 0.85rem;
 }
 
+.code-token {
+  font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);
+}
+
+.code-keyword {
+  color: #7dd3fc;
+}
+
+.code-type {
+  color: #a5b4fc;
+}
+
+.code-string {
+  color: #86efac;
+}
+
+.code-number {
+  color: #fbbf24;
+}
+
+.code-comment {
+  color: #9ca3af;
+}
+
 /* Pepe-themed subtle textured background for main layout */
 .pepe-bg {
   background:

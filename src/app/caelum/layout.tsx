@@ -40,7 +40,7 @@ export default function CaelumLayout({ children }: { children: ReactNode }) {
           <Link href="/" className="text-xs px-3 py-1 rounded-md border border-black/10 dark:border-white/15 hover:bg-black/[.05] dark:hover:bg-white/[.06]">Home</Link>
         </div>
         <div className="max-w-5xl mx-auto px-6 py-8 xl:flex xl:items-start xl:gap-8">
-          <div id="doc-content" className="flex-1 max-w-none">
+          <div id="doc-content" className="prose dark:prose-invert max-w-none flex-1">
             {children}
           </div>
           <Toc contentSelector="#doc-content" />
