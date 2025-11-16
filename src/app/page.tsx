@@ -24,27 +24,31 @@ export default function Home() {
                 A project by Quefep, for projects by Quefep!
               </span>
             </p>
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-              <a href="https://discord.com/users/1051142172130422884" target="_blank" rel="noreferrer" aria-label="Discord profile">
-                <img
-                  src="https://img.shields.io/badge/Discord-Profile-5865F2?logo=discord&logoColor=white&style=for-the-badge"
-                  alt="Discord profile badge"
-                  className="h-7"
-                />
-              </a>
-              <a href="https://github.com/M1tsumi" target="_blank" rel="noreferrer" aria-label="GitHub profile">
-                <img
-                  src="https://img.shields.io/badge/GitHub-M1tsumi-181717?logo=github&logoColor=white&style=for-the-badge"
-                  alt="GitHub profile badge"
-                  className="h-7"
-                />
-              </a>
-              <a href="/swiftdisc" aria-label="SwiftDisc Docs Badge">
-                <img src="https://img.shields.io/badge/SwiftDisc-Docs-0ea5e9?style=for-the-badge" alt="SwiftDisc Docs" className="h-7" />
-              </a>
-              <a href="/caelum" aria-label="Caelum Docs Badge">
-                <img src="https://img.shields.io/badge/Caelum-Docs-22c55e?style=for-the-badge" alt="Caelum Docs" className="h-7" />
-              </a>
+            <div className="mt-6 flex flex-col items-center gap-3">
+              <div className="flex flex-wrap items-center justify-center gap-3">
+                <a href="https://discord.com/users/1051142172130422884" target="_blank" rel="noreferrer" aria-label="Discord profile">
+                  <img
+                    src="https://img.shields.io/badge/Discord-Profile-5865F2?logo=discord&logoColor=white&style=for-the-badge"
+                    alt="Discord profile badge"
+                    className="h-7"
+                  />
+                </a>
+                <a href="https://github.com/M1tsumi" target="_blank" rel="noreferrer" aria-label="GitHub profile">
+                  <img
+                    src="https://img.shields.io/badge/GitHub-M1tsumi-181717?logo=github&logoColor=white&style=for-the-badge"
+                    alt="GitHub profile badge"
+                    className="h-7"
+                  />
+                </a>
+              </div>
+              <div className="flex flex-wrap items-center justify-center gap-3">
+                <a href="/swiftdisc" aria-label="SwiftDisc Docs Badge">
+                  <img src="https://img.shields.io/badge/SwiftDisc-Docs-0ea5e9?style=for-the-badge" alt="SwiftDisc Docs" className="h-7" />
+                </a>
+                <a href="/caelum" aria-label="Caelum Docs Badge">
+                  <img src="https://img.shields.io/badge/Caelum-Docs-22c55e?style=for-the-badge" alt="Caelum Docs" className="h-7" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
