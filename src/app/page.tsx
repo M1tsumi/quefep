@@ -1,19 +1,20 @@
  import Image from 'next/image';
  import PepeMain from '@/app/assets/pepe-main.png';
+ import CommitHistory from '@/app/components/CommitHistory';
  export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
       <header className="border-b border-black/10 dark:border-white/10/60">
-        <div className="max-w-5xl mx-auto px-6 py-10">
+        <div className="max-w-5xl mx-auto px-6 py-10 text-center">
           <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight">Quef Central</h1>
-          <p className="mt-2 text-sm text-black/70 dark:text-white/70 max-w-prose text-center">
+          <p className="mt-2 text-sm text-black/70 dark:text-white/70 max-w-prose mx-auto">
             Portfolio for the projects of Quefep.
             <br />
             <span className="mt-2 text-sm text-black/70 dark:text-white/70 max-w-prose">
               A project by Quefep, for projects by Quefep!
             </span>
           </p>
-          <div className="mt-6 flex flex-wrap items-center gap-3">
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             <a href="https://discord.com/users/1051142172130422884" target="_blank" rel="noreferrer" aria-label="Discord profile">
               <img
                 src="https://img.shields.io/badge/Discord-Profile-5865F2?logo=discord&logoColor=white&style=for-the-badge"
@@ -105,6 +106,8 @@
               </a>
             </div>
           </section>
+
+          <CommitHistory />
         </div>
       </main>
 
