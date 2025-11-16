@@ -1,8 +1,34 @@
  import type { ReactNode } from 'react';
+ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import PepeEvil from '@/app/assets/pepe-evil.png';
 import Toc from '@/app/components/Toc';
+
+export const metadata: Metadata = {
+  title: 'SwiftDisc Docs | Quef Central',
+  description: 'Fast, ergonomic Swift Discord library with typed models and modern Swift concurrency.',
+  openGraph: {
+    title: 'SwiftDisc Docs | Quef Central',
+    description: 'Fast, ergonomic Swift Discord library with typed models and modern Swift concurrency.',
+    siteName: 'Quef Central',
+    type: 'website',
+    images: [
+      {
+        url: '/pepe.ico',
+        width: 64,
+        height: 64,
+        alt: 'Quef Central icon',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary',
+    title: 'SwiftDisc Docs | Quef Central',
+    description: 'Fast, ergonomic Swift Discord library with typed models and modern Swift concurrency.',
+    images: ['/pepe.ico'],
+  },
+};
 
 export default function SwiftDiscLayout({ children }: { children: ReactNode }) {
   return (

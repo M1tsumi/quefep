@@ -1,8 +1,34 @@
  import type { ReactNode } from 'react';
+ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import PepeMagic from '@/app/assets/pepe-magic.png';
 import Toc from '@/app/components/Toc';
+
+export const metadata: Metadata = {
+  title: 'Caelum Docs | Quef Central',
+  description: 'Objective-C Discord library built for stability and production-ready automation.',
+  openGraph: {
+    title: 'Caelum Docs | Quef Central',
+    description: 'Objective-C Discord library built for stability and production-ready automation.',
+    siteName: 'Quef Central',
+    type: 'website',
+    images: [
+      {
+        url: '/pepe.ico',
+        width: 64,
+        height: 64,
+        alt: 'Quef Central icon',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Caelum Docs | Quef Central',
+    description: 'Objective-C Discord library built for stability and production-ready automation.',
+    images: ['/pepe.ico'],
+  },
+};
 
 export default function CaelumLayout({ children }: { children: ReactNode }) {
   return (
