@@ -7,7 +7,7 @@ export default function Page() {
         your current version and the one you are targeting.
       </p>
 
-      <h2>0.1.0 &mdash; Initial preview</h2>
+      <h2>0.1.0 — Initial preview</h2>
       <ul>
         <li>First public preview of Caelum.</li>
         <li>Gateway connection management with basic reconnection.</li>

@@ -11,15 +11,15 @@ export default function Page() {
       <h2>Core modules</h2>
       <ul>
         <li>
-          <a href="/swiftdisc/api/client">Client</a> — configure tokens, shards, logging, and wire
+          <a href="/swiftdisc/api/client">Client</a>. Configure tokens, shards, logging, and wire
           Gateway + REST together.
         </li>
         <li>
-          <a href="/swiftdisc/api/rest">REST</a> — async helpers over Discord HTTP routes with rate
+          <a href="/swiftdisc/api/rest">REST</a>. Async helpers over Discord HTTP routes with rate
           limiting and retry semantics.
         </li>
         <li>
-          <a href="/swiftdisc/api/gateway">Gateway</a> — WebSocket lifecycle, intents, event
+          <a href="/swiftdisc/api/gateway">Gateway</a>. Covers WebSocket lifecycle, intents, event
           streaming, and reconnection strategy.
         </li>
       </ul>
@@ -27,15 +27,15 @@ export default function Page() {
       <h2>Supporting types</h2>
       <ul>
         <li>
-          <a href="/swiftdisc/api/models">Models</a> — Codable value types for guilds, channels,
+          <a href="/swiftdisc/api/models">Models</a>. Codable value types for guilds, channels,
           members, messages, roles, and attachments.
         </li>
         <li>
-          <a href="/swiftdisc/api/errors">Errors</a> — typed errors surfaced across Client, REST,
+          <a href="/swiftdisc/api/errors">Errors</a>. Typed errors surfaced across Client, REST,
           and Gateway to simplify handling.
         </li>
         <li>
-          <a href="/swiftdisc/api/utils">Utils</a> — logging hooks, cache primitives, and testing
+          <a href="/swiftdisc/api/utils">Utils</a>. Logging hooks, cache primitives, and testing
           aids that plug into the core stack.
         </li>
       </ul>

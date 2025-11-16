@@ -5,14 +5,15 @@ export default function Page() {
     <article className="prose dark:prose-invert max-w-none">
       <h1>REST</h1>
       <p>
-        Caelum&apos;s REST layer wraps Discord&apos;s HTTP API with Objective-C friendly models, automatic
-        serialization, and built-in rate limiting. It is exposed through <code>client.rest</code>.
+        Caelum&apos;s REST surface mirrors Discord API v10. Requests are automatically serialized from
+        Foundation objects, bucketed for rate limiting, and exposed through <code>client.rest</code>
+        so you can issue calls from anywhere in your app.
       </p>
 
       <h2>Creating messages</h2>
       <p>
-        The most common operation is sending messages. Use the convenience helpers on the REST
-        client to send plain text, embeds, or both.
+        Use the send helpers to cover plain text, embeds, files, and follow-ups. Requests execute on
+        Caelum-managed queues and call back on the queue you provide.
       </p>
       <CodeBlock
         language="objective-c"
@@ -32,8 +33,8 @@ export default function Page() {
 
       <h2>Embeds</h2>
       <p>
-        Use <code>CLEmbed</code> to construct rich embedded content. Fields, colors, and authors
-        are all created with small helper methods.
+        <code>CLEmbed</code> exposes builder-style helpers for rich content. Embed components map to
+        Discord payloads, so anything you can do via HTTP can be expressed through Caelum.
       </p>
       <CodeBlock
         language="objective-c"
@@ -75,9 +76,8 @@ embed.footer = [CLEmbedFooter footerWithText:@"Powered by Caelum" iconURL:nil];
 
       <h2>Rate limiting</h2>
       <p>
-        Caelum tracks Discord&apos;s per-route rate limit buckets and transparently retries requests
-        when necessary. You normally do not need to handle this yourself, but you can observe
-        errors for logging or metrics.
+        Caelum tracks Discord&apos;s per-route buckets, global 429s, and retry-after headers. Transient
+        failures are retried with jitter. Monitor errors if you want to emit metrics or alerting.
       </p>
       <CodeBlock
         language="objective-c"

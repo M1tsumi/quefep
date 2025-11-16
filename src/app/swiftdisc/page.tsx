@@ -44,14 +44,14 @@ export default function Page() {
       <h2 className="text-[#0ea5e9]">Quick links</h2>
       <ul>
         <li>
-          <a href="/swiftdisc/getting-started">Getting Started</a> — installation, configuration,
-          and a first bot walkthrough.
+          <a href="/swiftdisc/getting-started">Getting Started</a>. Covers installation,
+          configuration, and a first bot walkthrough.
         </li>
         <li>
-          <a href="/swiftdisc/api">API Reference</a> — deep dives on every module.
+          <a href="/swiftdisc/api">API Reference</a>. Explore every module in depth.
         </li>
         <li>
-          <a href="/swiftdisc/changelog">Changelog</a> — release notes and upgrade guidance.
+          <a href="/swiftdisc/changelog">Changelog</a>. Review release notes and upgrade guidance.
         </li>
       </ul>
     </article>

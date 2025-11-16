@@ -12,9 +12,9 @@ export default function Page() {
 
       <h2>Core types</h2>
       <ul>
-        <li><code>CLClient</code> &mdash; primary Discord client.</li>
-        <li><code>CLClientConfiguration</code> &mdash; token, intents, presence, shard config.</li>
-        <li><code>CLIntents</code> &mdash; bitmask describing which events you want.</li>
+        <li><code>CLClient</code>, the primary Discord client.</li>
+        <li><code>CLClientConfiguration</code> for token, intents, presence, and shard configuration.</li>
+        <li><code>CLIntents</code>, a bitmask describing which events you want to receive.</li>
       </ul>
 
       <h2>Basic setup</h2>

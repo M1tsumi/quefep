@@ -10,7 +10,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Quef Central",
-  description: "A minimalist hub for projects by M1tsumi — SwiftDisc, Caelum, and more.",
+  description: "A minimalist hub for projects by M1tsumi featuring SwiftDisc, Caelum, and more.",
   icons: {
     icon: "/pepe.ico",
     shortcut: "/pepe.ico",

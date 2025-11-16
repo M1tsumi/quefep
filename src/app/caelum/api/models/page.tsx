@@ -12,11 +12,11 @@ export default function Page() {
 
       <h2>Common entities</h2>
       <ul>
-        <li><code>CLUser</code> &mdash; Discord user/bot account.</li>
-        <li><code>CLGuild</code> &mdash; server with channels, roles, and members.</li>
-        <li><code>CLChannel</code> &mdash; text, voice, or thread channel.</li>
-        <li><code>CLMessage</code> &mdash; message with content, embeds, attachments, and metadata.</li>
-        <li><code>CLRole</code> &mdash; permission container within a guild.</li>
+        <li><code>CLUser</code>, representing a Discord user or bot identity.</li>
+        <li><code>CLGuild</code>, the container for channels, roles, and members.</li>
+        <li><code>CLChannel</code>, which models text, voice, stage, and thread channels.</li>
+        <li><code>CLMessage</code>, including content, embeds, attachments, and metadata.</li>
+        <li><code>CLRole</code>, the permission surface within a guild.</li>
       </ul>
 
       <h2>Inspecting models from events</h2>

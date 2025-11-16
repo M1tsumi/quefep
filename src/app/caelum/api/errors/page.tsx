@@ -5,15 +5,14 @@ export default function Page() {
     <article className="prose dark:prose-invert max-w-none">
       <h1>Errors</h1>
       <p>
-        Caelum normalizes Discord API failures into a small set of error types so you can handle
-        them consistently from Objective-C.
+        Caelum normalizes Discord REST and Gateway failures so you can branch on predictable
+        Objective-C errors instead of parsing raw payloads.
       </p>
 
       <h2>REST errors</h2>
       <p>
-        REST operations surface <code>NSError</code> instances with a Caelum-specific domain and
-        well-known codes for common situations like bad requests, missing permissions, and rate
-        limiting.
+        REST operations use a Caelum-specific <code>NSError</code> domain with typed codes for common
+        cases such as missing permissions, missing channels, rate limits, and validation failures.
       </p>
       <CodeBlock
         language="objective-c"
@@ -34,8 +33,9 @@ export default function Page() {
 
       <h2>Gateway close codes</h2>
       <p>
-        When the gateway connection closes, Caelum exposes the close code and whether the
-        connection will be retried.
+        <code>CLGatewayCloseEvent</code> provides the close code, clean bit, and whether Caelum will
+        resume or start a fresh identify. Watch for authentication errors (4004) or invalid session
+        loops so you can alert operators.
       </p>
       <CodeBlock
         language="objective-c"
@@ -50,9 +50,9 @@ export default function Page() {
 
       <h2>Retry and backoff</h2>
       <p>
-        Caelum handles transient network failures and rate limiting internally. If you build
-        higher-level workflows, prefer idempotent operations and add your own backoff when
-        repeating entire workflows.
+        Caelum automatically retries transient HTTP failures, applies jitter to global 429s, and
+        reconnects the gateway after network drops. For multi-step workflows, add your own idempotent
+        logic and backoff to avoid duplicating side effects.
       </p>
     </article>
   );

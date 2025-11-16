@@ -5,16 +5,17 @@ export default function Page() {
     <article className="prose dark:prose-invert max-w-none">
       <h1>Gateway</h1>
       <p>
-        The gateway is Discord&apos;s WebSocket interface. Caelum manages identify, resume,
-        heartbeats, and reconnection logic for you through <code>CLGateway</code>, which is owned
-        by <code>CLClient</code>.
+        Caelum&apos;s gateway layer is built on Discord Gateway v10 with full identify, heartbeat, ACK,
+        resume, and invalid-session handling. The <code>CLGateway</code> owned by
+        <code>CLClient</code> orchestrates shards, exposes event hooks, and bubbles metrics-friendly
+        callbacks.
       </p>
 
-      <h2>Shards and connection strategy</h2>
+      <h2>Sharding strategy</h2>
       <p>
-        For many bots a single shard is enough. For larger deployments you can specify a shard
-        count in <code>CLClientConfiguration</code>. Caelum will open one connection per shard and
-        distribute events.
+        Bump shard counts as your bot scales. The configuration is forwarded to
+        <code>CLMShardManager</code> so each shard tracks sequence numbers and resumes
+        independently.
       </p>
       <CodeBlock
         language="objective-c"
@@ -26,11 +27,10 @@ CLClient *client = [[CLClient alloc] initWithConfiguration:config];
 [client connectWithCompletion:nil];`}
       />
 
-      <h2>Listening to low-level gateway events</h2>
+      <h2>Connection lifecycle hooks</h2>
       <p>
-        In most cases you will work with the high-level event helpers on <code>CLClient</code>.
-        For advanced scenarios you can subscribe directly to gateway packets or connection state
-        changes.
+        <code>client.gateway</code> exposes block-based APIs for connection and session events.
+        Attach logging to understand reconnect frequency or emit metrics.
       </p>
       <CodeBlock
         language="objective-c"
@@ -52,10 +52,10 @@ CLClient *client = [[CLClient alloc] initWithConfiguration:config];
 }];`}
       />
 
-      <h2>Reconnection and resume</h2>
+      <h2>Resume and invalidation</h2>
       <p>
-        Caelum automatically attempts to resume sessions when possible. If resume fails, it will
-        perform a fresh identify. You can hook into these transitions for metrics or logging.
+        Caelum invokes session callbacks whenever Discord confirms a resume or forces a new
+        identify. Use these events to reset in-memory caches or notify operators.
       </p>
       <CodeBlock
         language="objective-c"

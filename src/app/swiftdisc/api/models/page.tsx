@@ -12,11 +12,11 @@ export default function Page() {
 
       <h2>Common entities</h2>
       <ul>
-        <li><code>SDUser</code> — Discord user or bot account.</li>
-        <li><code>SDGuild</code> — server with channels, roles, and members.</li>
-        <li><code>SDChannel</code> — text, voice, or thread channel.</li>
-        <li><code>SDMessage</code> — message with content, embeds, attachments, and metadata.</li>
-        <li><code>SDRole</code> — permission container within a guild.</li>
+        <li><code>SDUser</code>. Represents a Discord user or bot account.</li>
+        <li><code>SDGuild</code>. Models a server with channels, roles, and members.</li>
+        <li><code>SDChannel</code>. Covers text, voice, and thread channels.</li>
+        <li><code>SDMessage</code>. Includes content, embeds, attachments, and metadata.</li>
+        <li><code>SDRole</code>. Describes a permission container within a guild.</li>
       </ul>
 
       <h2>Inspecting models from events</h2>
