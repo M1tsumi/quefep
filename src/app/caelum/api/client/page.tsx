@@ -47,7 +47,7 @@ client.presence = [CLPresence presenceWithStatus:CLPresenceStatusOnline
 
       <h2>Registering event handlers</h2>
       <p>
-        Use the client's event APIs to observe gateway events like message create, ready, and
+        Use the client&apos;s event APIs to observe gateway events like message create, ready, and
         guild updates. The exact names may differ slightly depending on the version, but the
         pattern stays the same: register a block and work with strongly-typed model objects.
       </p>
