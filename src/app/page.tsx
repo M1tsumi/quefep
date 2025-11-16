@@ -5,13 +5,13 @@
     <div className="min-h-screen flex flex-col">
       <header className="border-b border-black/10 dark:border-white/10/60">
         <div className="max-w-5xl mx-auto px-6 py-10">
-          <div className="flex items-center gap-3">
-            <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight">Quef Central</h1>
-            <Image src={PepeMain} alt="Pepe" className="h-9 w-auto drop-shadow-sm hidden sm:inline-block" />
-          </div>
-          <p className="mt-2 text-sm text-black/70 dark:text-white/70 max-w-prose">
-           A project by Quefep, for projects by Quefep. If you&apos;d like to support this developer, just join the community discord!
-           We&apos;re working on projects such as SwiftDisc, Caelum, and more!
+          <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight">Quef Central</h1>
+          <p className="mt-2 text-sm text-black/70 dark:text-white/70 max-w-prose text-center">
+            Portfolio for the projects of Quefep.
+            <br />
+            <span className="mt-2 text-sm text-black/70 dark:text-white/70 max-w-prose">
+              A project by Quefep, for projects by Quefep!
+            </span>
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <a href="https://discord.com/users/1051142172130422884" target="_blank" rel="noreferrer" aria-label="Discord profile">
