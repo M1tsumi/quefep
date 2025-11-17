@@ -3,7 +3,44 @@ import PepeMain from '@/app/assets/pepe-main.png';
 import CommitHistory from '@/app/components/CommitHistory';
 import TotalCommitsBadge from '@/app/components/TotalCommitsBadge';
 
-export default function Home() {
+interface GithubRepoSummary {
+  stars: number;
+  forks: number;
+  issues: number;
+}
+
+async function fetchRepoSummary(repo: string): Promise<GithubRepoSummary | null> {
+  try {
+    const res = await fetch(`https://api.github.com/repos/${repo}`, {
+      headers: {
+        Accept: 'application/vnd.github+json',
+      },
+    });
+
+    if (!res.ok) return null;
+
+    const data = (await res.json()) as {
+      stargazers_count?: number;
+      forks_count?: number;
+      open_issues_count?: number;
+    };
+
+    return {
+      stars: data.stargazers_count ?? 0,
+      forks: data.forks_count ?? 0,
+      issues: data.open_issues_count ?? 0,
+    };
+  } catch {
+    return null;
+  }
+}
+
+export default async function Home() {
+  const [swiftDiscRepo, caelumRepo] = await Promise.all([
+    fetchRepoSummary('M1tsumi/SwiftDisc'),
+    fetchRepoSummary('M1tsumi/Caelum'),
+  ]);
+
   return (
     <div className="min-h-screen flex flex-col">
       <header className="border-b border-black/10 dark:border-white/10/60">
@@ -78,6 +115,13 @@ export default function Home() {
                         Swift
                       </span>
                     </header>
+                    {swiftDiscRepo && (
+                      <div className="mt-3 flex flex-wrap items-center gap-3 text-[11px] text-black/60 dark:text-white/60">
+                        <span>★ {swiftDiscRepo.stars}</span>
+                        <span>Forks {swiftDiscRepo.forks}</span>
+                        <span>Issues {swiftDiscRepo.issues}</span>
+                      </div>
+                    )}
                     <p className="mt-4 text-sm text-black/70 dark:text-white/70 flex-1">
                       Zero-dependency library with async/await, typed models, and full v10 REST + Gateway support.
                     </p>
@@ -126,6 +170,13 @@ export default function Home() {
                         Objective-C
                       </span>
                     </header>
+                    {caelumRepo && (
+                      <div className="mt-3 flex flex-wrap items-center gap-3 text-[11px] text-black/60 dark:text-white/60">
+                        <span>★ {caelumRepo.stars}</span>
+                        <span>Forks {caelumRepo.forks}</span>
+                        <span>Issues {caelumRepo.issues}</span>
+                      </div>
+                    )}
                     <p className="mt-4 text-sm text-black/70 dark:text-white/70 flex-1">
                       Built for long-running bots with shard management, robust rate limiting, and familiar Foundation
                       patterns.
@@ -165,27 +216,35 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="rounded-xl border border-[#78B15933] dark:border-[#78B15966] bg-black/5 dark:bg-black/30 px-5 py-6 flex flex-col h-full">
-                <h3 className="text-base font-medium text-center">Quef Central Discord</h3>
-                <p className="mt-1 text-sm text-black/70 dark:text-white/70 text-center">
-                  Sliding into the frog pond? Tap the invite below.
-                </p>
-                <div className="mt-4 flex-1 flex items-center justify-center">
-                  <a
-                    href="https://discord.gg/6nS2KqxQtj"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="w-full max-w-sm block"
-                    aria-label="Join the Quef Central Discord server"
-                  >
-                    <img
-                      src="https://invidget.switchblade.xyz/6nS2KqxQtj"
-                      alt="Discord invite for Quef Central"
-                      className="w-full rounded-2xl border border-black/10 dark:border-white/10 shadow-lg dark:shadow-black/40"
-                      loading="lazy"
-                    />
-                  </a>
+              <div className="rounded-xl border border-[#78B15933] dark:border-[#78B15966] bg-black/5 dark:bg-black/30 px-6 py-5 flex flex-col h-full shadow-sm hover:shadow-md hover:border-[#78B15966] transition-colors transition-shadow">
+                <header className="flex items-start justify-between gap-3">
+                  <div>
+                    <h3 className="text-lg font-semibold">Quef Central Discord</h3>
+                    <p className="mt-1 text-xs text-black/60 dark:text-white/60">
+                      Sliding into the frog pond? Tap the invite below.
+                    </p>
+                  </div>
+                  <span className="inline-flex items-center rounded-full border border-[#5865F280] bg-[#5865F210] px-3 py-1 text-[11px] font-medium uppercase tracking-wide text-[#5865F2]">
+                    Community
+                  </span>
+                </header>
+                <div className="mt-4 flex-1 rounded-lg border border-black/10 dark:border-white/10 bg-black/10 dark:bg-black/30 overflow-hidden flex items-center justify-center">
+                  <img
+                    src="https://invidget.switchblade.xyz/6nS2KqxQtj"
+                    alt="Discord invite for Quef Central"
+                    className="w-full h-full object-cover opacity-90"
+                    loading="lazy"
+                  />
                 </div>
+                <a
+                  href="https://discord.gg/6nS2KqxQtj"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-5 inline-flex items-center justify-center rounded-full bg-[#5865F2] px-4 py-2 text-xs font-medium text-white hover:bg-[#4752C4] transition-colors w-full"
+                  aria-label="Join the Quef Central Discord server"
+                >
+                  Join Server
+                </a>
               </div>
             </div>
           </section>
