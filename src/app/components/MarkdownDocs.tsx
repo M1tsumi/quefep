@@ -97,8 +97,7 @@ export default function MarkdownDocs({ src }: MarkdownDocsProps) {
   if (html === null) {
     return (
       <article className="prose dark:prose-invert max-w-none">
-        <p>Loading documentation
-hellip;</p>
+        <p>Loading documentation…</p>
       </article>
     );
   }
