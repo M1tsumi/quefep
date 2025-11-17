@@ -1,10 +1,35 @@
-# Caelum API Reference
+<div align="center">
 
-Clean, fast, Objective‑C–native library for the Discord Gateway (v10) and REST API.
+# Caelum
+
+**Objective‑C Discord Gateway & REST library**
+
+*Last updated: 2025-11-16*
+
+</div>
+
+Caelum is a clean, fast, Objective‑C–native library for the Discord Gateway (v10) and REST API.
 
 This document provides a **developer‑oriented overview of all features and public surfaces** exposed by Caelum so you can build Discord bots and integrations directly from this file plus the headers.
 
 For full type signatures, always refer to the headers under `Source` (or the umbrella headers `Caelum.h` / `include/Caelum/Caelum.h`).
+
+---
+
+## Table of contents
+
+- [1. Getting Started](#1-getting-started)
+- [2. Architecture Overview](#2-architecture-overview)
+- [3. Core Utilities](#3-core-utilities)
+- [4. REST Client & HTTP Layer](#4-rest-client--http-layer)
+- [5. Gateway & Sharding](#5-gateway--sharding)
+- [6. Commands Framework (Prefix Commands)](#6-commands-framework-prefix-commands)
+- [7. Components & Interactions](#7-components--interactions)
+- [8. Auto Moderation](#8-auto-moderation)
+- [9. Localization & Application Install](#9-localization--application-install)
+- [10. Forum, Polls, Application Emoji, Message Snapshots](#10-forum-polls-application-emoji-message-snapshots)
+- [11. Feature & Endpoint Coverage Summary](#11-feature--endpoint-coverage-summary)
+- [12. Where to Go Next](#12-where-to-go-next)
 
 ---
 
@@ -493,4 +518,4 @@ The Commands, Components, AutoMod, Localization, Polls, Forum, Emoji, and Snapsh
 ## 12. Where to Go Next
 
 - For exact method signatures and full parameter lists, open the headers referenced in this document (e.g. `CLMDiscordRESTClient.h`, `CLMDiscordGatewayClient.h`, `CLMCommandRouter.h`).
-- Use this `docs.md` as an **index of capabilities** and as a starting point for exploring the API surface when building your bot or integration.
+- Use this `caelum-docs.md` as an **index of capabilities** and as a starting point for exploring the API surface when building your bot or integration.
