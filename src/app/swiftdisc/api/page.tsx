@@ -1,6 +1,6 @@
 import { marked } from "marked";
-import fs from "node:fs/promises";
-import path from "node:path";
+import fs from "fs/promises";
+import path from "path";
 import { tokenize, type CodeLanguage } from "@/app/components/CodeBlock";
 
 export const dynamic = "force-static";
