@@ -45,7 +45,7 @@ function tokenizeSwiftLike(code: string): Token[] {
   return tokens;
 }
 
-function tokenize(code: string, language: CodeLanguage = 'text'): Token[] {
+export function tokenize(code: string, language: CodeLanguage = 'text'): Token[] {
   switch (language) {
     case 'swift':
     case 'objective-c':
