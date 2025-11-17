@@ -104,16 +104,11 @@ export default async function Home() {
               <div className="space-y-4">
                 <div className="grid gap-4 md:grid-cols-2">
                   <article className="rounded-xl border border-[#78B15933] dark:border-[#78B15966] bg-black/5 dark:bg-black/40 px-6 py-5 flex flex-col h-full shadow-sm hover:shadow-md hover:border-[#78B15966] hover:bg-[#78B15910] dark:hover:bg-[#4A7C5930] transition-colors transition-shadow">
-                    <header className="flex items-start justify-between gap-3">
-                      <div>
-                        <h3 className="text-lg font-semibold">SwiftDisc</h3>
-                        <p className="mt-1 text-xs text-black/60 dark:text-white/60">
-                          Native Swift Discord API for iOS & macOS bots.
-                        </p>
-                      </div>
-                      <span className="inline-flex items-center rounded-full border border-[#0ea5e980] bg-[#0ea5e910] px-3 py-1 text-[11px] font-medium uppercase tracking-wide text-[#0ea5e9]">
-                        Swift
-                      </span>
+                    <header className="flex flex-col gap-1">
+                      <h3 className="text-lg font-semibold">SwiftDisc</h3>
+                      <p className="text-xs text-black/60 dark:text-white/60">
+                        Native Swift Discord API for iOS & macOS bots.
+                      </p>
                     </header>
                     {swiftDiscRepo && (
                       <div className="mt-3 flex flex-wrap items-center gap-3 text-[11px] text-black/60 dark:text-white/60">
@@ -122,14 +117,16 @@ export default async function Home() {
                         <span>Issues {swiftDiscRepo.issues}</span>
                       </div>
                     )}
-                    <p className="mt-4 text-sm text-black/70 dark:text-white/70 flex-1">
-                      Zero-dependency library with async/await, typed models, and full v10 REST + Gateway support.
-                    </p>
-                    <div className="mt-4 flex flex-wrap gap-2 text-[11px] text-black/70 dark:text-white/70">
-                      <span className="rounded-full bg-black/10 dark:bg-white/5 px-3 py-1">Async/Await</span>
-                      <span className="rounded-full bg-black/10 dark:bg-white/5 px-3 py-1">Zero Dependencies</span>
-                      <span className="rounded-full bg-black/10 dark:bg-white/5 px-3 py-1">Type-Safe Models</span>
-                      <span className="rounded-full bg-black/10 dark:bg-white/5 px-3 py-1">Gateway v10</span>
+                    <div className="mt-4 rounded-lg border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/[0.02] p-3 space-y-3 flex-1">
+                      <p className="text-sm text-black/70 dark:text-white/70">
+                        Zero-dependency library with async/await, typed models, and full v10 REST + Gateway support.
+                      </p>
+                      <div className="flex flex-wrap gap-2 text-[11px] text-black/70 dark:text-white/70">
+                        <span className="rounded-full bg-black/10 dark:bg-white/5 px-3 py-1">Async/Await</span>
+                        <span className="rounded-full bg-black/10 dark:bg-white/5 px-3 py-1">Zero Dependencies</span>
+                        <span className="rounded-full bg-black/10 dark:bg-white/5 px-3 py-1">Type-Safe Models</span>
+                        <span className="rounded-full bg-black/10 dark:bg-white/5 px-3 py-1">Gateway v10</span>
+                      </div>
                     </div>
                     <div className="mt-6 flex flex-wrap items-center justify-between gap-3">
                       <div className="flex flex-wrap gap-2 text-[11px] text-black/60 dark:text-white/60">
@@ -159,16 +156,11 @@ export default async function Home() {
                   </article>
 
                   <article className="rounded-xl border border-[#78B15933] dark:border-[#78B15966] bg-black/5 dark:bg-black/40 px-6 py-5 flex flex-col h-full shadow-sm hover:shadow-md hover:border-[#78B15966] hover:bg-[#78B15910] dark:hover:bg-[#4A7C5930] transition-colors transition-shadow">
-                    <header className="flex items-start justify-between gap-3">
-                      <div>
-                        <h3 className="text-lg font-semibold">Caelum</h3>
-                        <p className="mt-1 text-xs text-black/60 dark:text-white/60">
-                          Objective-C native Discord automation toolkit.
-                        </p>
-                      </div>
-                      <span className="inline-flex items-center rounded-full border border-[#22c55e80] bg-[#22c55e10] px-3 py-1 text-[11px] font-medium uppercase tracking-wide text-[#22c55e]">
-                        Objective-C
-                      </span>
+                    <header className="flex flex-col gap-1">
+                      <h3 className="text-lg font-semibold">Caelum</h3>
+                      <p className="text-xs text-black/60 dark:text-white/60">
+                        Objective-C native Discord automation toolkit.
+                      </p>
                     </header>
                     {caelumRepo && (
                       <div className="mt-3 flex flex-wrap items-center gap-3 text-[11px] text-black/60 dark:text-white/60">
@@ -177,15 +169,17 @@ export default async function Home() {
                         <span>Issues {caelumRepo.issues}</span>
                       </div>
                     )}
-                    <p className="mt-4 text-sm text-black/70 dark:text-white/70 flex-1">
-                      Built for long-running bots with shard management, robust rate limiting, and familiar Foundation
-                      patterns.
-                    </p>
-                    <div className="mt-4 flex flex-wrap gap-2 text-[11px] text-black/70 dark:text-white/70">
-                      <span className="rounded-full bg-black/10 dark:bg-white/5 px-3 py-1">Pure Objective-C</span>
-                      <span className="rounded-full bg-black/10 dark:bg-white/5 px-3 py-1">Gateway v10</span>
-                      <span className="rounded-full bg-black/10 dark:bg-white/5 px-3 py-1">REST API</span>
-                      <span className="rounded-full bg-black/10 dark:bg-white/5 px-3 py-1">Zero Swift Dependencies</span>
+                    <div className="mt-4 rounded-lg border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/[0.02] p-3 space-y-3 flex-1">
+                      <p className="text-sm text-black/70 dark:text-white/70">
+                        Built for long-running bots with shard management, robust rate limiting, and familiar Foundation
+                        patterns.
+                      </p>
+                      <div className="flex flex-wrap gap-2 text-[11px] text-black/70 dark:text-white/70">
+                        <span className="rounded-full bg-black/10 dark:bg-white/5 px-3 py-1">Pure Objective-C</span>
+                        <span className="rounded-full bg-black/10 dark:bg-white/5 px-3 py-1">Gateway v10</span>
+                        <span className="rounded-full bg-black/10 dark:bg-white/5 px-3 py-1">REST API</span>
+                        <span className="rounded-full bg-black/10 dark:bg-white/5 px-3 py-1">Zero Swift Dependencies</span>
+                      </div>
                     </div>
                     <div className="mt-6 flex flex-wrap items-center justify-between gap-3">
                       <div className="flex flex-wrap gap-2 text-[11px] text-black/60 dark:text-white/60">
@@ -228,13 +222,21 @@ export default async function Home() {
                     Community
                   </span>
                 </header>
-                <div className="mt-4 flex-1 rounded-lg border border-black/10 dark:border-white/10 bg-black/10 dark:bg-black/30 overflow-hidden flex items-center justify-center">
-                  <img
-                    src="https://invidget.switchblade.xyz/6nS2KqxQtj"
-                    alt="Discord invite for Quef Central"
-                    className="w-full h-full object-cover opacity-90"
-                    loading="lazy"
-                  />
+                <div className="mt-4 flex-1 rounded-lg border border-black/10 dark:border-white/10 bg-gradient-to-br from-[#020617] via-[#020617] to-[#020617] px-4 py-3 flex flex-col justify-between">
+                  <div className="flex items-center justify-between text-xs text-white">
+                    <span className="font-medium">Quef Central</span>
+                    <span className="inline-flex items-center gap-1 text-[11px] text-[#22c55e]">
+                      <span className="h-1.5 w-1.5 rounded-full bg-[#22c55e]" />
+                      Online
+                    </span>
+                  </div>
+                  <div className="mt-3 text-[11px] text-white/70">
+                    <p>Home base for SwiftDisc and Caelum users, release notes, and low-noise chat.</p>
+                  </div>
+                  <div className="mt-3 flex items-center justify-between text-[11px] text-white/60">
+                    <span>Text & voice channels</span>
+                    <span>Friendly, moderated</span>
+                  </div>
                 </div>
                 <a
                   href="https://discord.gg/6nS2KqxQtj"
