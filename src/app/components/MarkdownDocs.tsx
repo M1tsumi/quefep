@@ -71,8 +71,9 @@ export default function MarkdownDocs({ src }: MarkdownDocsProps) {
         if (!cancelled) {
           setHtml(rendered);
         }
-      } catch (err) {
+      } catch (error) {
         if (!cancelled) {
+          console.error("Failed to load markdown docs", error);
           setError("Failed to load documentation.");
         }
       }
