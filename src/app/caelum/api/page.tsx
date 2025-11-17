@@ -31,10 +31,10 @@ function highlight(code: string, lang?: string): string {
   return tokens
     .map((token) => {
       const text = escapeHtml(token.text);
-      if ((token as any).type === "plain") {
+      if (token.type === "plain") {
         return text;
       }
-      const type = (token as any).type as string;
+      const type = token.type;
       return `<span class="code-token code-${type}">${text}</span>`;
     })
     .join("");

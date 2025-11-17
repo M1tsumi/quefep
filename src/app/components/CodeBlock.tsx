@@ -1,8 +1,8 @@
 export type CodeLanguage = 'swift' | 'objective-c' | 'bash' | 'json' | 'text';
 
-type TokenType = 'plain' | 'keyword' | 'type' | 'string' | 'number' | 'comment';
+export type TokenType = 'plain' | 'keyword' | 'type' | 'string' | 'number' | 'comment';
 
-interface Token {
+export interface Token {
   type: TokenType;
   text: string;
 }
