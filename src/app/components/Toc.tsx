@@ -1,4 +1,9 @@
-"use client";
+ lo9p-]
+ 
+ 
+ 
+ ."use client";
+ 
 import { useEffect, useState, MouseEvent } from "react";
 
 type Item = { id: string; text: string };
